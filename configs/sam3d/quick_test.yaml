@@ -1,0 +1,26 @@
+# Quick test configuration - fast processing for testing
+# Usage: python process_video_refactored.py --config config_examples/quick_test.yaml
+
+experiment_name: "quick_test"
+
+input: "data/videos/demo"
+
+text_prompt: "a baby"
+
+output_dir: "outputs/demo"
+
+processing:
+  max_frames: 50                       # Process only 50 frames
+  skip_mesh_saving: true               # Don't save PLY files (faster)
+  export_coco_csv: true
+  bundle_adjustment: true
+  temporal_smooth_keypoints: true
+  temporal_smooth_window: 11
+  temporal_smooth_polyorder: 3
+
+quality:
+  enable_filter: false
+
+metrics:
+  enable_metrics: true
+  enable_plots: true

@@ -1,0 +1,39 @@
+# Default configuration for infant video processing
+# Usage: python process_video_refactored.py --config config_examples/default.yaml
+
+# Experiment name (optional, auto-generated from input if not provided)
+experiment_name: null
+
+# Input: single video file or folder of videos
+input:  "/workspaces/sam-3d-infant/data/videos/robot/sim_trunk_clothed_cam2_vid5.MP4"
+
+# Text prompt for segmentation
+text_prompt: "a baby"
+
+# Output directory
+output_dir: "output"
+
+# Processing parameters
+processing:
+  max_frames: -1                      # -1 for all frames
+  skip_mesh_generation: false          # Skip 3D mesh generation (2D keypoints only)
+  skip_mesh_saving: false              # Generate meshes but don't save PLY files
+  export_coco_csv: true                # Export COCO 17-point CSV files
+  bundle_adjustment: true              # Apply bundle adjustment to fix bone lengths
+  constrain_torso: false               # Include torso in constraints (not recommended for infants)
+  temporal_smooth_keypoints: true      # Apply Savitzky-Golay temporal smoothing
+  temporal_smooth_window: 11           # SG filter window (must be odd)
+  temporal_smooth_polyorder: 3         # SG polynomial order
+  smoothing_sigma: 2.0                 # Mesh temporal smoothing strength
+
+# Quality filter parameters
+quality:
+  enable_filter: false                 # Enable quality filtering (skip bad frames)
+  z_velocity_threshold: 0.15           # Max Z-axis camera movement
+  total_velocity_threshold: 0.25       # Max total camera movement
+  vertex_displacement_threshold: 0.20  # Max vertex deformation
+
+# Metrics and logging
+metrics:
+  enable_metrics: true                 # Track comprehensive metrics
+  enable_plots: true                   # Generate visualization plots

@@ -1,0 +1,5 @@
+Stage,Frame Count,Description
+initial_frames,300,Total frames to process
+after_segmentation,300,Frames with valid SAM3 masks
+after_quality_filter,300,Frames passing quality checks
+valid_3d_keypoints,300,Successful MHR extraction

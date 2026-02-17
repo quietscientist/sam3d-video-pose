@@ -1,0 +1,31 @@
+# Batch processing configuration - process all videos in a folder
+# Usage: python process_video_refactored.py --config config_examples/batch_folder.yaml
+
+experiment_name: "batch_infant_videos"
+
+# Input can be a folder - all .mp4, .avi, .mov files will be processed
+input: "/workspaces/sam-3d-infant/data/videos/robot"
+
+text_prompt: "a baby"
+
+output_dir: "output_batch_robot"
+
+processing:
+  max_frames: -1
+  skip_mesh_saving: true               # Save space when processing many videos
+  export_coco_csv: true
+  bundle_adjustment: true
+  constrain_torso: false
+  temporal_smooth_keypoints: true
+  temporal_smooth_window: 11
+  temporal_smooth_polyorder: 3
+
+quality:
+  enable_filter: false                  # Enable quality filter for batch processing
+  z_velocity_threshold: 0.15
+  total_velocity_threshold: 0.25
+  vertex_displacement_threshold: 0.2
+
+metrics:
+  enable_metrics: true
+  enable_plots: false                  # Disable plots for batch processing (faster)

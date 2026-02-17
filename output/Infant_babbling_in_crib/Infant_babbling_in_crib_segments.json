@@ -1,0 +1,14 @@
+{
+  "video_name": "Infant_babbling_in_crib",
+  "total_frames_processed": 300,
+  "good_frames": 300,
+  "bad_frames": 0,
+  "num_segments": 1,
+  "segments": [
+    {
+      "start_frame": 0,
+      "end_frame": 299,
+      "num_frames": 300
+    }
+  ]
+}

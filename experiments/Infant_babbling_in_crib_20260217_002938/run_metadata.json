@@ -1,0 +1,44 @@
+{
+  "run_id": "Infant_babbling_in_crib_20260217_002938",
+  "run_dir": "experiments/Infant_babbling_in_crib_20260217_002938",
+  "start_time": "2026-02-17T00:29:38.069374",
+  "config": {
+    "input": "data/Infant_babbling_in_crib.mp4",
+    "experiment_name": null,
+    "text_prompt": "a baby",
+    "output_dir": "output",
+    "processing": {
+      "max_frames": 5,
+      "skip_mesh_generation": {},
+      "skip_mesh_saving": {},
+      "export_coco_csv": {},
+      "bundle_adjustment": true,
+      "constrain_torso": {},
+      "temporal_smooth_keypoints": true,
+      "temporal_smooth_window": {},
+      "temporal_smooth_polyorder": {},
+      "smoothing_sigma": {}
+    },
+    "quality": {
+      "enable_filter": {},
+      "z_velocity_threshold": {},
+      "total_velocity_threshold": {},
+      "vertex_displacement_threshold": {}
+    },
+    "metrics": {
+      "enable_metrics": true,
+      "enable_plots": true
+    },
+    "num_videos": 1
+  },
+  "status": "failed",
+  "results": {},
+  "errors": [
+    {
+      "timestamp": "2026-02-17T00:30:10.839763",
+      "error": "setup_sam_3d_body requires camt/utils.py to be implemented"
+    }
+  ],
+  "end_time": "2026-02-17T00:30:10.839776",
+  "duration_seconds": 32.770402
+}

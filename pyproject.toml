@@ -1,0 +1,158 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sam3d-video-pose"
+version = "0.1.0"
+description = "3D human pose estimation from video using SAM3 segmentation and SAM-3D-Body reconstruction"
+authors = [
+    { name = "Melanie Segado" },
+]
+license = { file = "LICENSE" }
+readme = "README.md"
+requires-python = ">=3.10,<3.11"
+keywords = ["computer-vision", "3d-reconstruction", "motion-analysis", "pose-estimation", "sam3", "human-pose", "video-analysis"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: BSD License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Image Recognition",
+]
+
+# Core runtime dependencies
+dependencies = [
+    "python-dotenv>=1.0.0",
+    "numpy>=1.24.0,<2.0.0",
+    "scipy>=1.10.0",
+    "opencv-python>=4.8.0",
+    "pillow>=10.0.0",
+    "tqdm>=4.65.0",
+    "trimesh>=4.0.0",
+    "moviepy>=1.0.3",
+    "torch>=2.0.0",
+    "torchvision>=0.15.0",
+    "transformers>=4.30.0",
+    "accelerate>=0.20.0",
+    "huggingface-hub>=0.16.0",
+]
+
+[project.optional-dependencies]
+# Development dependencies
+dev = [
+    "ruff>=0.1.0",
+    "black>=23.0.0",
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "ipython>=8.0.0",
+]
+
+# Documentation dependencies
+docs = [
+    "mkdocs>=1.5.0",
+    "mkdocs-material>=9.0.0",
+]
+
+# Jupyter notebook support
+notebooks = [
+    "jupyter>=1.0.0",
+    "notebook>=7.0.0",
+    "ipykernel>=6.0.0",
+    "ipywidgets>=8.0.0",
+]
+
+# Visualization dependencies
+viz = [
+    "matplotlib>=3.7.0",
+    "pandas>=2.0.0",
+]
+
+# All optional dependencies
+all = [
+    "sam3d-video-pose[dev,docs,notebooks,viz]",
+]
+
+[project.urls]
+Homepage = "https://github.com/yourusername/sam3d-video-pose"
+Repository = "https://github.com/yourusername/sam3d-video-pose"
+Issues = "https://github.com/yourusername/sam3d-video-pose/issues"
+Documentation = "https://github.com/yourusername/sam3d-video-pose/blob/main/README.md"
+
+[project.scripts]
+sam3dvideo = "sam3dvideo.cli:main"
+
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["sam3dvideo*"]
+exclude = ["tests*", "docs*", "notebooks*", "scripts*"]
+
+[tool.setuptools.package-data]
+sam3dvideo = ["py.typed"]
+
+# Ruff configuration
+[tool.ruff]
+line-length = 99
+src = ["sam3dvideo"]
+target-version = "py310"
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes
+    "I",   # isort
+    "B",   # flake8-bugbear
+    "C4",  # flake8-comprehensions
+    "UP",  # pyupgrade
+]
+ignore = [
+    "E501",  # line too long (handled by formatter)
+    "B008",  # do not perform function calls in argument defaults
+    "C901",  # too complex
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["sam3dvideo"]
+force-sort-within-sections = true
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+# Pytest configuration
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = [
+    "--verbose",
+    "--cov=sam3dvideo",
+    "--cov-report=term-missing",
+    "--cov-report=html",
+]
+
+# Black configuration (if used alongside ruff)
+[tool.black]
+line-length = 99
+target-version = ["py310"]
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+  | external
+)/
+'''
+

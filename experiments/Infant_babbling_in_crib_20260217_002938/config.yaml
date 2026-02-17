@@ -1,0 +1,24 @@
+input: data/Infant_babbling_in_crib.mp4
+experiment_name: null
+text_prompt: a baby
+output_dir: output
+processing:
+  max_frames: 5
+  skip_mesh_generation: {}
+  skip_mesh_saving: {}
+  export_coco_csv: {}
+  bundle_adjustment: true
+  constrain_torso: {}
+  temporal_smooth_keypoints: true
+  temporal_smooth_window: {}
+  temporal_smooth_polyorder: {}
+  smoothing_sigma: {}
+quality:
+  enable_filter: {}
+  z_velocity_threshold: {}
+  total_velocity_threshold: {}
+  vertex_displacement_threshold: {}
+metrics:
+  enable_metrics: true
+  enable_plots: true
+num_videos: 1

@@ -1,0 +1,5698 @@
+[
+  {
+    "frame_idx": 0,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0000_obj_0/frame_0_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0000_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {},
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 1,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0001_obj_0/frame_1_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0001_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.02760601043701172,
+        "total_velocity": 0.027815228328108788,
+        "vertex_displacement": 0.01892727240920067
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 2,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0002_obj_0/frame_2_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0002_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.044589996337890625,
+        "total_velocity": 0.04476434737443924,
+        "vertex_displacement": 0.05412808805704117
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 3,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0003_obj_0/frame_3_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0003_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.035388946533203125,
+        "total_velocity": 0.035670649260282516,
+        "vertex_displacement": 0.01999838650226593
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 4,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0004_obj_0/frame_4_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0004_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.08925390243530273,
+        "total_velocity": 0.09064487367868423,
+        "vertex_displacement": 0.02390684373676777
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 5,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0005_obj_0/frame_5_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0005_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.05909919738769531,
+        "total_velocity": 0.05912916362285614,
+        "vertex_displacement": 0.015975525602698326
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 6,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0006_obj_0/frame_6_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0006_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.04860091209411621,
+        "total_velocity": 0.04880479350686073,
+        "vertex_displacement": 0.03574775159358978
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 7,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0007_obj_0/frame_7_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0007_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.018384933471679688,
+        "total_velocity": 0.018642643466591835,
+        "vertex_displacement": 0.021576235070824623
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 8,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0008_obj_0/frame_8_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0008_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.03278660774230957,
+        "total_velocity": 0.03504103422164917,
+        "vertex_displacement": 0.03593304380774498
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 9,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0009_obj_0/frame_9_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0009_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.009099006652832031,
+        "total_velocity": 0.011535697616636753,
+        "vertex_displacement": 0.019465718418359756
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 10,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0010_obj_0/frame_10_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0010_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.01308131217956543,
+        "total_velocity": 0.013593776151537895,
+        "vertex_displacement": 0.02255122922360897
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 11,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0011_obj_0/frame_11_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0011_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.09226012229919434,
+        "total_velocity": 0.09267915785312653,
+        "vertex_displacement": 0.020751889795064926
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 12,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0012_obj_0/frame_12_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0012_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.08391046524047852,
+        "total_velocity": 0.08556962013244629,
+        "vertex_displacement": 0.024532679468393326
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 13,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0013_obj_0/frame_13_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0013_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.053503990173339844,
+        "total_velocity": 0.055001404136419296,
+        "vertex_displacement": 0.02336602844297886
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 14,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0014_obj_0/frame_14_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0014_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.0028541088104248047,
+        "total_velocity": 0.005698809400200844,
+        "vertex_displacement": 0.016305100172758102
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 15,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0015_obj_0/frame_15_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0015_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.01845717430114746,
+        "total_velocity": 0.023428019136190414,
+        "vertex_displacement": 0.02511604130268097
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 16,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0016_obj_0/frame_16_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0016_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.025046348571777344,
+        "total_velocity": 0.025624146685004234,
+        "vertex_displacement": 0.018644828349351883
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 17,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0017_obj_0/frame_17_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0017_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.013208389282226562,
+        "total_velocity": 0.01576460897922516,
+        "vertex_displacement": 0.027669038623571396
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 18,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0018_obj_0/frame_18_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0018_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.04218626022338867,
+        "total_velocity": 0.042972102761268616,
+        "vertex_displacement": 0.020579369738698006
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 19,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0019_obj_0/frame_19_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0019_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.07130050659179688,
+        "total_velocity": 0.07138513773679733,
+        "vertex_displacement": 0.02734571322798729
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 20,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0020_obj_0/frame_20_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0020_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.010716676712036133,
+        "total_velocity": 0.010726844891905785,
+        "vertex_displacement": 0.01123051717877388
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 21,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0021_obj_0/frame_21_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0021_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.012697696685791016,
+        "total_velocity": 0.013087830506265163,
+        "vertex_displacement": 0.007011225447058678
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 22,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0022_obj_0/frame_22_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0022_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.045734405517578125,
+        "total_velocity": 0.04575484246015549,
+        "vertex_displacement": 0.01018544752150774
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 23,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0023_obj_0/frame_23_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0023_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.03915214538574219,
+        "total_velocity": 0.03933190181851387,
+        "vertex_displacement": 0.007335710804909468
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 24,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0024_obj_0/frame_24_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0024_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.0228426456451416,
+        "total_velocity": 0.024883588775992393,
+        "vertex_displacement": 0.012289617210626602
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 25,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0025_obj_0/frame_25_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0025_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.017941713333129883,
+        "total_velocity": 0.01803775131702423,
+        "vertex_displacement": 0.009039342403411865
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 26,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0026_obj_0/frame_26_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0026_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.007042884826660156,
+        "total_velocity": 0.007752052042633295,
+        "vertex_displacement": 0.008882285095751286
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 27,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0027_obj_0/frame_27_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0027_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.005181550979614258,
+        "total_velocity": 0.007315736263990402,
+        "vertex_displacement": 0.01663053035736084
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 28,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0028_obj_0/frame_28_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0028_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.03125596046447754,
+        "total_velocity": 0.034572016447782516,
+        "vertex_displacement": 0.024727126583456993
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 29,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0029_obj_0/frame_29_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0029_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.01214742660522461,
+        "total_velocity": 0.012507319450378418,
+        "vertex_displacement": 0.013414251618087292
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 30,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0030_obj_0/frame_30_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0030_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.0012669563293457031,
+        "total_velocity": 0.0018269531428813934,
+        "vertex_displacement": 0.012155631557106972
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 31,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0031_obj_0/frame_31_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0031_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.015404224395751953,
+        "total_velocity": 0.016093537211418152,
+        "vertex_displacement": 0.009824732318520546
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 32,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0032_obj_0/frame_32_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0032_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.02422475814819336,
+        "total_velocity": 0.024430880323052406,
+        "vertex_displacement": 0.012343200854957104
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 33,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0033_obj_0/frame_33_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0033_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.04316973686218262,
+        "total_velocity": 0.04320067912340164,
+        "vertex_displacement": 0.011155587621033192
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 34,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0034_obj_0/frame_34_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0034_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.06506180763244629,
+        "total_velocity": 0.06567192077636719,
+        "vertex_displacement": 0.017029721289873123
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 35,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0035_obj_0/frame_35_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0035_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.006005048751831055,
+        "total_velocity": 0.014333996921777725,
+        "vertex_displacement": 0.02903950959444046
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 36,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0036_obj_0/frame_36_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0036_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.02710556983947754,
+        "total_velocity": 0.03337801247835159,
+        "vertex_displacement": 0.029588105157017708
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 37,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0037_obj_0/frame_37_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0037_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.017520427703857422,
+        "total_velocity": 0.01756300963461399,
+        "vertex_displacement": 0.012096494436264038
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 38,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0038_obj_0/frame_38_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0038_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.014601707458496094,
+        "total_velocity": 0.01572307199239731,
+        "vertex_displacement": 0.020500456914305687
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 39,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0039_obj_0/frame_39_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0039_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.016407251358032227,
+        "total_velocity": 0.01682025007903576,
+        "vertex_displacement": 0.01556960679590702
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 40,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0040_obj_0/frame_40_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0040_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.053154706954956055,
+        "total_velocity": 0.05369701609015465,
+        "vertex_displacement": 0.021049346774816513
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 41,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0041_obj_0/frame_41_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0041_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.045372724533081055,
+        "total_velocity": 0.04598560184240341,
+        "vertex_displacement": 0.01752258650958538
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 42,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0042_obj_0/frame_42_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0042_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.01680302619934082,
+        "total_velocity": 0.01822030171751976,
+        "vertex_displacement": 0.022930221632122993
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 43,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0043_obj_0/frame_43_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0043_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.05472922325134277,
+        "total_velocity": 0.055670641362667084,
+        "vertex_displacement": 0.02713215909898281
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 44,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0044_obj_0/frame_44_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0044_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.05554485321044922,
+        "total_velocity": 0.05763642117381096,
+        "vertex_displacement": 0.035144634544849396
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 45,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0045_obj_0/frame_45_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0045_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.11601448059082031,
+        "total_velocity": 0.11756400018930435,
+        "vertex_displacement": 0.044365864247083664
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 46,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0046_obj_0/frame_46_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0046_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.009932279586791992,
+        "total_velocity": 0.010163534432649612,
+        "vertex_displacement": 0.015870751813054085
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 47,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0047_obj_0/frame_47_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0047_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.01301431655883789,
+        "total_velocity": 0.013435903005301952,
+        "vertex_displacement": 0.0171338077634573
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 48,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0048_obj_0/frame_48_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0048_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.030974626541137695,
+        "total_velocity": 0.03204973787069321,
+        "vertex_displacement": 0.01747165247797966
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 49,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0049_obj_0/frame_49_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0049_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.016944408416748047,
+        "total_velocity": 0.01753229647874832,
+        "vertex_displacement": 0.019655466079711914
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 50,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0050_obj_0/frame_50_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0050_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.03153109550476074,
+        "total_velocity": 0.032113730907440186,
+        "vertex_displacement": 0.021093148738145828
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 51,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0051_obj_0/frame_51_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0051_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.018723249435424805,
+        "total_velocity": 0.022277195006608963,
+        "vertex_displacement": 0.029969632625579834
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 52,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0052_obj_0/frame_52_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0052_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.03600645065307617,
+        "total_velocity": 0.03737442567944527,
+        "vertex_displacement": 0.021825682371854782
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 53,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0053_obj_0/frame_53_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0053_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.028104782104492188,
+        "total_velocity": 0.033783916383981705,
+        "vertex_displacement": 0.01706940308213234
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 54,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0054_obj_0/frame_54_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0054_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.0732576847076416,
+        "total_velocity": 0.07493981719017029,
+        "vertex_displacement": 0.026893427595496178
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 55,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0055_obj_0/frame_55_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0055_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.022461652755737305,
+        "total_velocity": 0.03020244464278221,
+        "vertex_displacement": 0.024184003472328186
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 56,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0056_obj_0/frame_56_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0056_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.03933238983154297,
+        "total_velocity": 0.03935103118419647,
+        "vertex_displacement": 0.015652328729629517
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 57,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0057_obj_0/frame_57_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0057_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.04841947555541992,
+        "total_velocity": 0.04850035533308983,
+        "vertex_displacement": 0.017965206876397133
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 58,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0058_obj_0/frame_58_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0058_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.039853572845458984,
+        "total_velocity": 0.040163006633520126,
+        "vertex_displacement": 0.015301274135708809
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 59,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0059_obj_0/frame_59_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0059_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.06445765495300293,
+        "total_velocity": 0.06485287845134735,
+        "vertex_displacement": 0.025940584018826485
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 60,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0060_obj_0/frame_60_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0060_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.015303611755371094,
+        "total_velocity": 0.015884632244706154,
+        "vertex_displacement": 0.027160359546542168
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 61,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0061_obj_0/frame_61_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0061_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.028184175491333008,
+        "total_velocity": 0.028531040996313095,
+        "vertex_displacement": 0.021854795515537262
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 62,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0062_obj_0/frame_62_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0062_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.005980014801025391,
+        "total_velocity": 0.006167120765894651,
+        "vertex_displacement": 0.01176710519939661
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 63,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0063_obj_0/frame_63_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0063_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.026413440704345703,
+        "total_velocity": 0.02655147761106491,
+        "vertex_displacement": 0.02064496837556362
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 64,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0064_obj_0/frame_64_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0064_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.06343269348144531,
+        "total_velocity": 0.06388628482818604,
+        "vertex_displacement": 0.02651386335492134
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 65,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0065_obj_0/frame_65_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0065_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.03530526161193848,
+        "total_velocity": 0.036063384264707565,
+        "vertex_displacement": 0.03454725071787834
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 66,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0066_obj_0/frame_66_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0066_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.09457015991210938,
+        "total_velocity": 0.09795843809843063,
+        "vertex_displacement": 0.04129989817738533
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 67,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0067_obj_0/frame_67_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0067_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.06017351150512695,
+        "total_velocity": 0.060192059725522995,
+        "vertex_displacement": 0.04253770038485527
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 68,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0068_obj_0/frame_68_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0068_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.02529740333557129,
+        "total_velocity": 0.03257673978805542,
+        "vertex_displacement": 0.025852078571915627
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 69,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0069_obj_0/frame_69_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0069_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.0008120536804199219,
+        "total_velocity": 0.004295289982110262,
+        "vertex_displacement": 0.02957262471318245
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 70,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0070_obj_0/frame_70_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0070_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.025588512420654297,
+        "total_velocity": 0.028053531423211098,
+        "vertex_displacement": 0.033217716962099075
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 71,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0071_obj_0/frame_71_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0071_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.02191305160522461,
+        "total_velocity": 0.02216653898358345,
+        "vertex_displacement": 0.03329939767718315
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 72,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0072_obj_0/frame_72_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0072_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.031013965606689453,
+        "total_velocity": 0.03287871554493904,
+        "vertex_displacement": 0.021029451861977577
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 73,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0073_obj_0/frame_73_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0073_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.03294229507446289,
+        "total_velocity": 0.03311929851770401,
+        "vertex_displacement": 0.008004652336239815
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 74,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0074_obj_0/frame_74_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0074_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.03809499740600586,
+        "total_velocity": 0.03809815272688866,
+        "vertex_displacement": 0.009520826861262321
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 75,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0075_obj_0/frame_75_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0075_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.028969764709472656,
+        "total_velocity": 0.029035083949565887,
+        "vertex_displacement": 0.0038878449704498053
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 76,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0076_obj_0/frame_76_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0076_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.02346348762512207,
+        "total_velocity": 0.024048537015914917,
+        "vertex_displacement": 0.011296959593892097
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 77,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0077_obj_0/frame_77_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0077_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.04356217384338379,
+        "total_velocity": 0.043949536979198456,
+        "vertex_displacement": 0.009635385125875473
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 78,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0078_obj_0/frame_78_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0078_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.024721622467041016,
+        "total_velocity": 0.02503228932619095,
+        "vertex_displacement": 0.01842479035258293
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 79,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0079_obj_0/frame_79_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0079_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.027105093002319336,
+        "total_velocity": 0.027542345225811005,
+        "vertex_displacement": 0.03784733638167381
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 80,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0080_obj_0/frame_80_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0080_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.0013704299926757812,
+        "total_velocity": 0.009056460112333298,
+        "vertex_displacement": 0.025877948850393295
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 81,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0081_obj_0/frame_81_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0081_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.020908117294311523,
+        "total_velocity": 0.02112368308007717,
+        "vertex_displacement": 0.006179455202072859
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 82,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0082_obj_0/frame_82_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0082_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.0014159679412841797,
+        "total_velocity": 0.009945107623934746,
+        "vertex_displacement": 0.018354110419750214
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 83,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0083_obj_0/frame_83_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0083_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.026534080505371094,
+        "total_velocity": 0.02858581393957138,
+        "vertex_displacement": 0.016352348029613495
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 84,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0084_obj_0/frame_84_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0084_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.021970033645629883,
+        "total_velocity": 0.022270476445555687,
+        "vertex_displacement": 0.021237900480628014
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 85,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0085_obj_0/frame_85_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0085_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.006533622741699219,
+        "total_velocity": 0.007854652591049671,
+        "vertex_displacement": 0.021697919815778732
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 86,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0086_obj_0/frame_86_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0086_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.010845422744750977,
+        "total_velocity": 0.011151128448545933,
+        "vertex_displacement": 0.0187296774238348
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 87,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0087_obj_0/frame_87_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0087_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.017685651779174805,
+        "total_velocity": 0.01855381578207016,
+        "vertex_displacement": 0.018509382382035255
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 88,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0088_obj_0/frame_88_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0088_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.04690361022949219,
+        "total_velocity": 0.047043345868587494,
+        "vertex_displacement": 0.02313338965177536
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 89,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0089_obj_0/frame_89_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0089_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.001764535903930664,
+        "total_velocity": 0.0036458177492022514,
+        "vertex_displacement": 0.011185413226485252
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 90,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0090_obj_0/frame_90_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0090_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.016368627548217773,
+        "total_velocity": 0.01774706318974495,
+        "vertex_displacement": 0.013590802438557148
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 91,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0091_obj_0/frame_91_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0091_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.025475025177001953,
+        "total_velocity": 0.02584792673587799,
+        "vertex_displacement": 0.008603264577686787
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 92,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0092_obj_0/frame_92_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0092_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.013231754302978516,
+        "total_velocity": 0.01356455683708191,
+        "vertex_displacement": 0.011853879317641258
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 93,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0093_obj_0/frame_93_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0093_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.030662059783935547,
+        "total_velocity": 0.03074612282216549,
+        "vertex_displacement": 0.0178640428930521
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 94,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0094_obj_0/frame_94_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0094_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.02606344223022461,
+        "total_velocity": 0.026152893900871277,
+        "vertex_displacement": 0.013625693507492542
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 95,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0095_obj_0/frame_95_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0095_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.07846450805664062,
+        "total_velocity": 0.07892147451639175,
+        "vertex_displacement": 0.032707296311855316
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 96,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0096_obj_0/frame_96_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0096_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.013762474060058594,
+        "total_velocity": 0.013850678689777851,
+        "vertex_displacement": 0.009458910673856735
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 97,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0097_obj_0/frame_97_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0097_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.035655975341796875,
+        "total_velocity": 0.035783786326646805,
+        "vertex_displacement": 0.006324422545731068
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 98,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0098_obj_0/frame_98_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0098_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.03737926483154297,
+        "total_velocity": 0.037432294338941574,
+        "vertex_displacement": 0.016711296513676643
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 99,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0099_obj_0/frame_99_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0099_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.030493974685668945,
+        "total_velocity": 0.03140396997332573,
+        "vertex_displacement": 0.023921111598610878
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 100,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0100_obj_0/frame_100_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0100_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.011880636215209961,
+        "total_velocity": 0.012124840170145035,
+        "vertex_displacement": 0.012195556424558163
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 101,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0101_obj_0/frame_101_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0101_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.011159658432006836,
+        "total_velocity": 0.013224782422184944,
+        "vertex_displacement": 0.0289910938590765
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 102,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0102_obj_0/frame_102_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0102_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.0008966922760009766,
+        "total_velocity": 0.0020906345453113317,
+        "vertex_displacement": 0.019748350605368614
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 103,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0103_obj_0/frame_103_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0103_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.018406391143798828,
+        "total_velocity": 0.019159073010087013,
+        "vertex_displacement": 0.020726969465613365
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 104,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0104_obj_0/frame_104_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0104_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.0176699161529541,
+        "total_velocity": 0.017798004671931267,
+        "vertex_displacement": 0.010480616241693497
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 105,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0105_obj_0/frame_105_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0105_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.025490283966064453,
+        "total_velocity": 0.02559010311961174,
+        "vertex_displacement": 0.02179313451051712
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 106,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0106_obj_0/frame_106_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0106_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.03748917579650879,
+        "total_velocity": 0.03789195790886879,
+        "vertex_displacement": 0.031220417469739914
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 107,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0107_obj_0/frame_107_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0107_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.023983001708984375,
+        "total_velocity": 0.024269361048936844,
+        "vertex_displacement": 0.03390752151608467
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 108,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0108_obj_0/frame_108_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0108_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.048521995544433594,
+        "total_velocity": 0.04928223043680191,
+        "vertex_displacement": 0.027272505685687065
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 109,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0109_obj_0/frame_109_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0109_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.023375511169433594,
+        "total_velocity": 0.02654101327061653,
+        "vertex_displacement": 0.02183561772108078
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 110,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0110_obj_0/frame_110_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0110_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.10788726806640625,
+        "total_velocity": 0.1083807647228241,
+        "vertex_displacement": 0.025589624419808388
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 111,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0111_obj_0/frame_111_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0111_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.08199930191040039,
+        "total_velocity": 0.0839846059679985,
+        "vertex_displacement": 0.03649784252047539
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 112,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0112_obj_0/frame_112_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0112_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.06613469123840332,
+        "total_velocity": 0.06847473978996277,
+        "vertex_displacement": 0.03255883604288101
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 113,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0113_obj_0/frame_113_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0113_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.0031824111938476562,
+        "total_velocity": 0.014602165669202805,
+        "vertex_displacement": 0.031403057277202606
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 114,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0114_obj_0/frame_114_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0114_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.04015517234802246,
+        "total_velocity": 0.04104863852262497,
+        "vertex_displacement": 0.03238779678940773
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 115,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0115_obj_0/frame_115_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0115_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.01077127456665039,
+        "total_velocity": 0.01078771147876978,
+        "vertex_displacement": 0.030654994770884514
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 116,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0116_obj_0/frame_116_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0116_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.043509721755981445,
+        "total_velocity": 0.04452116787433624,
+        "vertex_displacement": 0.03160763904452324
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 117,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0117_obj_0/frame_117_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0117_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.0335080623626709,
+        "total_velocity": 0.03396819531917572,
+        "vertex_displacement": 0.027910606935620308
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 118,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0118_obj_0/frame_118_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0118_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.0012676715850830078,
+        "total_velocity": 0.0026999982073903084,
+        "vertex_displacement": 0.02347477711737156
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 119,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0119_obj_0/frame_119_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0119_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.07797479629516602,
+        "total_velocity": 0.07975443452596664,
+        "vertex_displacement": 0.038570042699575424
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 120,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0120_obj_0/frame_120_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0120_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.022048234939575195,
+        "total_velocity": 0.02509663812816143,
+        "vertex_displacement": 0.03930141031742096
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 121,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0121_obj_0/frame_121_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0121_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.012436151504516602,
+        "total_velocity": 0.021208463236689568,
+        "vertex_displacement": 0.026631874963641167
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 122,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0122_obj_0/frame_122_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0122_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.04899168014526367,
+        "total_velocity": 0.05101276934146881,
+        "vertex_displacement": 0.023525899276137352
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 123,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0123_obj_0/frame_123_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0123_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.0818185806274414,
+        "total_velocity": 0.08367674797773361,
+        "vertex_displacement": 0.026267196983098984
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 124,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0124_obj_0/frame_124_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0124_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.020441770553588867,
+        "total_velocity": 0.022157177329063416,
+        "vertex_displacement": 0.024037223309278488
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 125,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0125_obj_0/frame_125_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0125_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.023357629776000977,
+        "total_velocity": 0.023489560931921005,
+        "vertex_displacement": 0.022282252088189125
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 126,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0126_obj_0/frame_126_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0126_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.037299156188964844,
+        "total_velocity": 0.03737073019146919,
+        "vertex_displacement": 0.016136109828948975
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 127,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0127_obj_0/frame_127_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0127_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.003837108612060547,
+        "total_velocity": 0.007266455329954624,
+        "vertex_displacement": 0.024089865386486053
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 128,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0128_obj_0/frame_128_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0128_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.011670827865600586,
+        "total_velocity": 0.013659193180501461,
+        "vertex_displacement": 0.01884380728006363
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 129,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0129_obj_0/frame_129_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0129_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.02515435218811035,
+        "total_velocity": 0.025764180347323418,
+        "vertex_displacement": 0.018605651333928108
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 130,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0130_obj_0/frame_130_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0130_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.00928044319152832,
+        "total_velocity": 0.010697965510189533,
+        "vertex_displacement": 0.02331889607012272
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 131,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0131_obj_0/frame_131_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0131_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.07053446769714355,
+        "total_velocity": 0.0709780752658844,
+        "vertex_displacement": 0.017124447971582413
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 132,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0132_obj_0/frame_132_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0132_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.02812647819519043,
+        "total_velocity": 0.02919336035847664,
+        "vertex_displacement": 0.01982272043824196
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 133,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0133_obj_0/frame_133_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0133_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.0198214054107666,
+        "total_velocity": 0.02008989080786705,
+        "vertex_displacement": 0.011621461249887943
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 134,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0134_obj_0/frame_134_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0134_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.020060062408447266,
+        "total_velocity": 0.020763492211699486,
+        "vertex_displacement": 0.011964141391217709
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 135,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0135_obj_0/frame_135_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0135_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.0003123283386230469,
+        "total_velocity": 0.005003131460398436,
+        "vertex_displacement": 0.0081424405798316
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 136,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0136_obj_0/frame_136_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0136_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.03159332275390625,
+        "total_velocity": 0.032571256160736084,
+        "vertex_displacement": 0.0174428578466177
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 137,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0137_obj_0/frame_137_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0137_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.03586244583129883,
+        "total_velocity": 0.03629240393638611,
+        "vertex_displacement": 0.014235062524676323
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 138,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0138_obj_0/frame_138_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0138_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.01925182342529297,
+        "total_velocity": 0.019849350675940514,
+        "vertex_displacement": 0.01939839869737625
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 139,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0139_obj_0/frame_139_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0139_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.054990530014038086,
+        "total_velocity": 0.05548994243144989,
+        "vertex_displacement": 0.019513344392180443
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 140,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0140_obj_0/frame_140_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0140_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.0227506160736084,
+        "total_velocity": 0.023400308564305305,
+        "vertex_displacement": 0.018047478049993515
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 141,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0141_obj_0/frame_141_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0141_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.056738853454589844,
+        "total_velocity": 0.05698205530643463,
+        "vertex_displacement": 0.010280415415763855
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 142,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0142_obj_0/frame_142_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0142_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.001161336898803711,
+        "total_velocity": 0.011712615378201008,
+        "vertex_displacement": 0.025977065786719322
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 143,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0143_obj_0/frame_143_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0143_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.07243537902832031,
+        "total_velocity": 0.07253167033195496,
+        "vertex_displacement": 0.031233442947268486
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 144,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0144_obj_0/frame_144_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0144_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.0009124279022216797,
+        "total_velocity": 0.0040205554105341434,
+        "vertex_displacement": 0.014173287898302078
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 145,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0145_obj_0/frame_145_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0145_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.002427339553833008,
+        "total_velocity": 0.005943752825260162,
+        "vertex_displacement": 0.015549322590231895
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 146,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0146_obj_0/frame_146_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0146_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.03395843505859375,
+        "total_velocity": 0.0342789925634861,
+        "vertex_displacement": 0.027924111112952232
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 147,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0147_obj_0/frame_147_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0147_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.00014925003051757812,
+        "total_velocity": 0.005219626240432262,
+        "vertex_displacement": 0.015370489098131657
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 148,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0148_obj_0/frame_148_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0148_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.022486448287963867,
+        "total_velocity": 0.022659340873360634,
+        "vertex_displacement": 0.011268338188529015
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 149,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0149_obj_0/frame_149_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0149_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.13602924346923828,
+        "total_velocity": 0.13674673438072205,
+        "vertex_displacement": 0.0361778624355793
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 150,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0150_obj_0/frame_150_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0150_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.08261752128601074,
+        "total_velocity": 0.08396454155445099,
+        "vertex_displacement": 0.032467469573020935
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 151,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0151_obj_0/frame_151_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0151_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.03374648094177246,
+        "total_velocity": 0.034507203847169876,
+        "vertex_displacement": 0.03512462601065636
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 152,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0152_obj_0/frame_152_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0152_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.043775320053100586,
+        "total_velocity": 0.04390639066696167,
+        "vertex_displacement": 0.02563469111919403
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 153,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0153_obj_0/frame_153_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0153_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.03359699249267578,
+        "total_velocity": 0.03374151512980461,
+        "vertex_displacement": 0.03484291955828667
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 154,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0154_obj_0/frame_154_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0154_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.03470635414123535,
+        "total_velocity": 0.034776460379362106,
+        "vertex_displacement": 0.027321333065629005
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 155,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0155_obj_0/frame_155_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0155_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.04236650466918945,
+        "total_velocity": 0.04345179349184036,
+        "vertex_displacement": 0.016705740243196487
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 156,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0156_obj_0/frame_156_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0156_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.0028104782104492188,
+        "total_velocity": 0.008609296754002571,
+        "vertex_displacement": 0.028020069003105164
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 157,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0157_obj_0/frame_157_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0157_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.04927349090576172,
+        "total_velocity": 0.050108812749385834,
+        "vertex_displacement": 0.026870103552937508
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 158,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0158_obj_0/frame_158_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0158_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.06918787956237793,
+        "total_velocity": 0.06954416632652283,
+        "vertex_displacement": 0.02061021327972412
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 159,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0159_obj_0/frame_159_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0159_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.0044100284576416016,
+        "total_velocity": 0.005320785101503134,
+        "vertex_displacement": 0.030987802892923355
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 160,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0160_obj_0/frame_160_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0160_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.021921157836914062,
+        "total_velocity": 0.023374928161501884,
+        "vertex_displacement": 0.028958948329091072
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 161,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0161_obj_0/frame_161_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0161_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.0022194385528564453,
+        "total_velocity": 0.006730337161570787,
+        "vertex_displacement": 0.043476734310388565
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 162,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0162_obj_0/frame_162_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0162_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.056738853454589844,
+        "total_velocity": 0.05868634209036827,
+        "vertex_displacement": 0.03671006113290787
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 163,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0163_obj_0/frame_163_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0163_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.0061681270599365234,
+        "total_velocity": 0.007114998530596495,
+        "vertex_displacement": 0.01882524974644184
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 164,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0164_obj_0/frame_164_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0164_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.04962444305419922,
+        "total_velocity": 0.05002909526228905,
+        "vertex_displacement": 0.02241610549390316
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 165,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0165_obj_0/frame_165_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0165_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.016012907028198242,
+        "total_velocity": 0.017627276480197906,
+        "vertex_displacement": 0.03123549185693264
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 166,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0166_obj_0/frame_166_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0166_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.07347226142883301,
+        "total_velocity": 0.07491592317819595,
+        "vertex_displacement": 0.01922919973731041
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 167,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0167_obj_0/frame_167_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0167_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.010273933410644531,
+        "total_velocity": 0.014879211783409119,
+        "vertex_displacement": 0.01780199073255062
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 168,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0168_obj_0/frame_168_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0168_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.0021126270294189453,
+        "total_velocity": 0.010352552868425846,
+        "vertex_displacement": 0.016901301220059395
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 169,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0169_obj_0/frame_169_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0169_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.02721118927001953,
+        "total_velocity": 0.028396205976605415,
+        "vertex_displacement": 0.026458311825990677
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 170,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0170_obj_0/frame_170_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0170_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.013486385345458984,
+        "total_velocity": 0.02141125313937664,
+        "vertex_displacement": 0.03424913436174393
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 171,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0171_obj_0/frame_171_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0171_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.008330106735229492,
+        "total_velocity": 0.009960896335542202,
+        "vertex_displacement": 0.022445624694228172
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 172,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0172_obj_0/frame_172_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0172_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.052518606185913086,
+        "total_velocity": 0.05310827121138573,
+        "vertex_displacement": 0.028513895347714424
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 173,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0173_obj_0/frame_173_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0173_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.0614166259765625,
+        "total_velocity": 0.06187676265835762,
+        "vertex_displacement": 0.030238062143325806
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 174,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0174_obj_0/frame_174_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0174_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.04478120803833008,
+        "total_velocity": 0.04607300087809563,
+        "vertex_displacement": 0.033796556293964386
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 175,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0175_obj_0/frame_175_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0175_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.03088831901550293,
+        "total_velocity": 0.03353811055421829,
+        "vertex_displacement": 0.030469972640275955
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 176,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0176_obj_0/frame_176_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0176_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.0036504268646240234,
+        "total_velocity": 0.008644734509289265,
+        "vertex_displacement": 0.02418498694896698
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 177,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0177_obj_0/frame_177_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0177_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.053357601165771484,
+        "total_velocity": 0.054742489010095596,
+        "vertex_displacement": 0.028089094907045364
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 178,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0178_obj_0/frame_178_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0178_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.025980234146118164,
+        "total_velocity": 0.02754138968884945,
+        "vertex_displacement": 0.015822378918528557
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 179,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0179_obj_0/frame_179_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0179_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.06627893447875977,
+        "total_velocity": 0.06629028916358948,
+        "vertex_displacement": 0.01983671635389328
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 180,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0180_obj_0/frame_180_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0180_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.07439470291137695,
+        "total_velocity": 0.07480768859386444,
+        "vertex_displacement": 0.02472277544438839
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 181,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0181_obj_0/frame_181_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0181_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.03941750526428223,
+        "total_velocity": 0.04042334109544754,
+        "vertex_displacement": 0.03222350403666496
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 182,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0182_obj_0/frame_182_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0182_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.06973099708557129,
+        "total_velocity": 0.0710054561495781,
+        "vertex_displacement": 0.03286321461200714
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 183,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0183_obj_0/frame_183_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0183_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.08528566360473633,
+        "total_velocity": 0.08611920475959778,
+        "vertex_displacement": 0.025773899629712105
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 184,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0184_obj_0/frame_184_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0184_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.04170370101928711,
+        "total_velocity": 0.04203411564230919,
+        "vertex_displacement": 0.03889387473464012
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 185,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0185_obj_0/frame_185_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0185_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.0981135368347168,
+        "total_velocity": 0.09876731038093567,
+        "vertex_displacement": 0.02717979997396469
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 186,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0186_obj_0/frame_186_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0186_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.07178664207458496,
+        "total_velocity": 0.07217714935541153,
+        "vertex_displacement": 0.01719062402844429
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 187,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0187_obj_0/frame_187_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0187_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.00818943977355957,
+        "total_velocity": 0.008447375148534775,
+        "vertex_displacement": 0.012965604662895203
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 188,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0188_obj_0/frame_188_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0188_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.07699036598205566,
+        "total_velocity": 0.07716009765863419,
+        "vertex_displacement": 0.026141097769141197
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 189,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0189_obj_0/frame_189_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0189_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.045377492904663086,
+        "total_velocity": 0.05031925439834595,
+        "vertex_displacement": 0.03904227167367935
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 190,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0190_obj_0/frame_190_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0190_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.07059884071350098,
+        "total_velocity": 0.07184122502803802,
+        "vertex_displacement": 0.029988542199134827
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 191,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0191_obj_0/frame_191_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0191_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.054764509201049805,
+        "total_velocity": 0.055593833327293396,
+        "vertex_displacement": 0.04531551152467728
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 192,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0192_obj_0/frame_192_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0192_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.023877859115600586,
+        "total_velocity": 0.024480899795889854,
+        "vertex_displacement": 0.03255915269255638
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 193,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0193_obj_0/frame_193_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0193_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.007981061935424805,
+        "total_velocity": 0.008723489940166473,
+        "vertex_displacement": 0.017662549391388893
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 194,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0194_obj_0/frame_194_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0194_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.004212617874145508,
+        "total_velocity": 0.006180878728628159,
+        "vertex_displacement": 0.023744361475110054
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 195,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0195_obj_0/frame_195_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0195_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.011150360107421875,
+        "total_velocity": 0.017480801790952682,
+        "vertex_displacement": 0.0774199590086937
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 196,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0196_obj_0/frame_196_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0196_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.09503531455993652,
+        "total_velocity": 0.09548608958721161,
+        "vertex_displacement": 0.042199280112981796
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 197,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0197_obj_0/frame_197_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0197_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.03659486770629883,
+        "total_velocity": 0.037179939448833466,
+        "vertex_displacement": 0.03552798926830292
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 198,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0198_obj_0/frame_198_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0198_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.01869678497314453,
+        "total_velocity": 0.019598355516791344,
+        "vertex_displacement": 0.03179358318448067
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 199,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0199_obj_0/frame_199_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0199_obj_0",
+    "score": 0.96484375,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.08320164680480957,
+        "total_velocity": 0.0834253802895546,
+        "vertex_displacement": 0.03686895966529846
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 200,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0200_obj_0/frame_200_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0200_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.009375810623168945,
+        "total_velocity": 0.009743836708366871,
+        "vertex_displacement": 0.02034950815141201
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 201,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0201_obj_0/frame_201_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0201_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.060426950454711914,
+        "total_velocity": 0.062170498073101044,
+        "vertex_displacement": 0.037467457354068756
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 202,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0202_obj_0/frame_202_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0202_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.05728483200073242,
+        "total_velocity": 0.05840813368558884,
+        "vertex_displacement": 0.024834446609020233
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 203,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0203_obj_0/frame_203_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0203_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.08219289779663086,
+        "total_velocity": 0.0838872492313385,
+        "vertex_displacement": 0.040420565754175186
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 204,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0204_obj_0/frame_204_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0204_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.022655487060546875,
+        "total_velocity": 0.023250704631209373,
+        "vertex_displacement": 0.030505506321787834
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 205,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0205_obj_0/frame_205_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0205_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.048308610916137695,
+        "total_velocity": 0.048673275858163834,
+        "vertex_displacement": 0.021254325285553932
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 206,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0206_obj_0/frame_206_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0206_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.01079869270324707,
+        "total_velocity": 0.01175516378134489,
+        "vertex_displacement": 0.009187091141939163
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 207,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0207_obj_0/frame_207_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0207_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.05672788619995117,
+        "total_velocity": 0.05674932524561882,
+        "vertex_displacement": 0.010924646630883217
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 208,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0208_obj_0/frame_208_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0208_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.02560734748840332,
+        "total_velocity": 0.025767281651496887,
+        "vertex_displacement": 0.02123795635998249
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 209,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0209_obj_0/frame_209_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0209_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.017605066299438477,
+        "total_velocity": 0.01859942637383938,
+        "vertex_displacement": 0.03015325777232647
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 210,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0210_obj_0/frame_210_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0210_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.057066917419433594,
+        "total_velocity": 0.057363372296094894,
+        "vertex_displacement": 0.05410205200314522
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 211,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0211_obj_0/frame_211_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0211_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.023690223693847656,
+        "total_velocity": 0.024431688711047173,
+        "vertex_displacement": 0.03157482668757439
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 212,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0212_obj_0/frame_212_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0212_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.03943300247192383,
+        "total_velocity": 0.039655279368162155,
+        "vertex_displacement": 0.022674409672617912
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 213,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0213_obj_0/frame_213_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0213_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.02703094482421875,
+        "total_velocity": 0.028072429820895195,
+        "vertex_displacement": 0.03639145940542221
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 214,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0214_obj_0/frame_214_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0214_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.008712530136108398,
+        "total_velocity": 0.011030681431293488,
+        "vertex_displacement": 0.0419081412255764
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 215,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0215_obj_0/frame_215_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0215_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.03451108932495117,
+        "total_velocity": 0.03452526777982712,
+        "vertex_displacement": 0.016383379697799683
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 216,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0216_obj_0/frame_216_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0216_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.002089262008666992,
+        "total_velocity": 0.002633200492709875,
+        "vertex_displacement": 0.02499043568968773
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 217,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0217_obj_0/frame_217_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0217_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.043517112731933594,
+        "total_velocity": 0.043711960315704346,
+        "vertex_displacement": 0.03500911593437195
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 218,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0218_obj_0/frame_218_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0218_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.06967663764953613,
+        "total_velocity": 0.07003022730350494,
+        "vertex_displacement": 0.017634950578212738
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 219,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0219_obj_0/frame_219_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0219_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.0350034236907959,
+        "total_velocity": 0.035203106701374054,
+        "vertex_displacement": 0.023459898307919502
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 220,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0220_obj_0/frame_220_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0220_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.055822134017944336,
+        "total_velocity": 0.05656934902071953,
+        "vertex_displacement": 0.027656257152557373
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 221,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0221_obj_0/frame_221_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0221_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.039556264877319336,
+        "total_velocity": 0.03990190476179123,
+        "vertex_displacement": 0.023384738713502884
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 222,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0222_obj_0/frame_222_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0222_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.0043752193450927734,
+        "total_velocity": 0.016826745122671127,
+        "vertex_displacement": 0.03530871868133545
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 223,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0223_obj_0/frame_223_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0223_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.03154110908508301,
+        "total_velocity": 0.03212093561887741,
+        "vertex_displacement": 0.04111095145344734
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 224,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0224_obj_0/frame_224_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0224_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.008172988891601562,
+        "total_velocity": 0.009462391026318073,
+        "vertex_displacement": 0.037515100091695786
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 225,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0225_obj_0/frame_225_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0225_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.026284217834472656,
+        "total_velocity": 0.03297828510403633,
+        "vertex_displacement": 0.040683675557374954
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 226,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0226_obj_0/frame_226_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0226_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.042942047119140625,
+        "total_velocity": 0.043631065636873245,
+        "vertex_displacement": 0.03588039055466652
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 227,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0227_obj_0/frame_227_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0227_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.007306337356567383,
+        "total_velocity": 0.00755806639790535,
+        "vertex_displacement": 0.032247234135866165
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 228,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0228_obj_0/frame_228_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0228_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.01768636703491211,
+        "total_velocity": 0.0194904413074255,
+        "vertex_displacement": 0.026748618111014366
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 229,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0229_obj_0/frame_229_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0229_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.019165992736816406,
+        "total_velocity": 0.02077755145728588,
+        "vertex_displacement": 0.021814044564962387
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 230,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0230_obj_0/frame_230_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0230_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.011258363723754883,
+        "total_velocity": 0.01499554980546236,
+        "vertex_displacement": 0.014054457657039165
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 231,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0231_obj_0/frame_231_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0231_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.02774834632873535,
+        "total_velocity": 0.030664563179016113,
+        "vertex_displacement": 0.024032551795244217
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 232,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0232_obj_0/frame_232_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0232_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.025742769241333008,
+        "total_velocity": 0.02601676993072033,
+        "vertex_displacement": 0.011876195669174194
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 233,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0233_obj_0/frame_233_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0233_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.03555727005004883,
+        "total_velocity": 0.038957495242357254,
+        "vertex_displacement": 0.017801744863390923
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 234,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0234_obj_0/frame_234_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0234_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.01760697364807129,
+        "total_velocity": 0.018444404006004333,
+        "vertex_displacement": 0.021410703659057617
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 235,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0235_obj_0/frame_235_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0235_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.021250486373901367,
+        "total_velocity": 0.021633269265294075,
+        "vertex_displacement": 0.009589208289980888
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 236,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0236_obj_0/frame_236_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0236_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.009891271591186523,
+        "total_velocity": 0.013699888251721859,
+        "vertex_displacement": 0.01843275874853134
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 237,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0237_obj_0/frame_237_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0237_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.0022983551025390625,
+        "total_velocity": 0.0055888015776872635,
+        "vertex_displacement": 0.02582145668566227
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 238,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0238_obj_0/frame_238_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0238_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.04695415496826172,
+        "total_velocity": 0.04723959416151047,
+        "vertex_displacement": 0.01674698293209076
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 239,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0239_obj_0/frame_239_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0239_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.027355194091796875,
+        "total_velocity": 0.027903607115149498,
+        "vertex_displacement": 0.0270145982503891
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 240,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0240_obj_0/frame_240_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0240_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.020471811294555664,
+        "total_velocity": 0.020528336986899376,
+        "vertex_displacement": 0.02674705535173416
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 241,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0241_obj_0/frame_241_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0241_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.04161572456359863,
+        "total_velocity": 0.04169120267033577,
+        "vertex_displacement": 0.024656740948557854
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 242,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0242_obj_0/frame_242_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0242_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.04449462890625,
+        "total_velocity": 0.044859398156404495,
+        "vertex_displacement": 0.016818923875689507
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 243,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0243_obj_0/frame_243_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0243_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.054524898529052734,
+        "total_velocity": 0.05536948889493942,
+        "vertex_displacement": 0.02864958345890045
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 244,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0244_obj_0/frame_244_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0244_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.0018706321716308594,
+        "total_velocity": 0.010076699778437614,
+        "vertex_displacement": 0.018647044897079468
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 245,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0245_obj_0/frame_245_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0245_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.07884383201599121,
+        "total_velocity": 0.07965448498725891,
+        "vertex_displacement": 0.02545604668557644
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 246,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0246_obj_0/frame_246_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0246_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.07744264602661133,
+        "total_velocity": 0.07817578315734863,
+        "vertex_displacement": 0.01685185730457306
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 247,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0247_obj_0/frame_247_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0247_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.10182905197143555,
+        "total_velocity": 0.10205051302909851,
+        "vertex_displacement": 0.02189330756664276
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 248,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0248_obj_0/frame_248_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0248_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.06288886070251465,
+        "total_velocity": 0.0630526915192604,
+        "vertex_displacement": 0.017119169235229492
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 249,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0249_obj_0/frame_249_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0249_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.007314920425415039,
+        "total_velocity": 0.010850058868527412,
+        "vertex_displacement": 0.022482886910438538
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 250,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0250_obj_0/frame_250_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0250_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.032364606857299805,
+        "total_velocity": 0.03250869736075401,
+        "vertex_displacement": 0.019754404202103615
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 251,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0251_obj_0/frame_251_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0251_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.08544564247131348,
+        "total_velocity": 0.08600322157144547,
+        "vertex_displacement": 0.019899191334843636
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 252,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0252_obj_0/frame_252_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0252_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.052631378173828125,
+        "total_velocity": 0.05289014056324959,
+        "vertex_displacement": 0.018268097192049026
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 253,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0253_obj_0/frame_253_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0253_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.07932043075561523,
+        "total_velocity": 0.0807502418756485,
+        "vertex_displacement": 0.043121736496686935
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 254,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0254_obj_0/frame_254_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0254_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.04161190986633301,
+        "total_velocity": 0.04253094643354416,
+        "vertex_displacement": 0.054855260998010635
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 255,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0255_obj_0/frame_255_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0255_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.10151195526123047,
+        "total_velocity": 0.10587439686059952,
+        "vertex_displacement": 0.07392658293247223
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 256,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0256_obj_0/frame_256_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0256_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.06732916831970215,
+        "total_velocity": 0.06772898882627487,
+        "vertex_displacement": 0.03562247380614281
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 257,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0257_obj_0/frame_257_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0257_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.08904862403869629,
+        "total_velocity": 0.08906181901693344,
+        "vertex_displacement": 0.029340343549847603
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 258,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0258_obj_0/frame_258_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0258_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.005265235900878906,
+        "total_velocity": 0.015611317940056324,
+        "vertex_displacement": 0.04586498439311981
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 259,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0259_obj_0/frame_259_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0259_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.06419634819030762,
+        "total_velocity": 0.06425376236438751,
+        "vertex_displacement": 0.05380755290389061
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 260,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0260_obj_0/frame_260_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0260_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.021969318389892578,
+        "total_velocity": 0.02556128241121769,
+        "vertex_displacement": 0.03468164801597595
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 261,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0261_obj_0/frame_261_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0261_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.008166790008544922,
+        "total_velocity": 0.01619761250913143,
+        "vertex_displacement": 0.0424230620265007
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 262,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0262_obj_0/frame_262_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0262_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.010609149932861328,
+        "total_velocity": 0.01167566142976284,
+        "vertex_displacement": 0.03327145427465439
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 263,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0263_obj_0/frame_263_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0263_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.015803813934326172,
+        "total_velocity": 0.02240416780114174,
+        "vertex_displacement": 0.025768496096134186
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 264,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0264_obj_0/frame_264_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0264_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.04223012924194336,
+        "total_velocity": 0.04490211233496666,
+        "vertex_displacement": 0.03497997298836708
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 265,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0265_obj_0/frame_265_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0265_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.06707644462585449,
+        "total_velocity": 0.06885693967342377,
+        "vertex_displacement": 0.044265154749155045
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 266,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0266_obj_0/frame_266_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0266_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.017741680145263672,
+        "total_velocity": 0.01836341992020607,
+        "vertex_displacement": 0.03516165167093277
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 267,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0267_obj_0/frame_267_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0267_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.00397491455078125,
+        "total_velocity": 0.008949359878897667,
+        "vertex_displacement": 0.02512318454682827
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 268,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0268_obj_0/frame_268_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0268_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.07056260108947754,
+        "total_velocity": 0.07106208801269531,
+        "vertex_displacement": 0.02580292336642742
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 269,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0269_obj_0/frame_269_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0269_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.023185253143310547,
+        "total_velocity": 0.024169083684682846,
+        "vertex_displacement": 0.02366630546748638
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 270,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0270_obj_0/frame_270_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0270_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.044187068939208984,
+        "total_velocity": 0.045410461723804474,
+        "vertex_displacement": 0.028999796137213707
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 271,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0271_obj_0/frame_271_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0271_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.02882671356201172,
+        "total_velocity": 0.029718860983848572,
+        "vertex_displacement": 0.026012172922492027
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 272,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0272_obj_0/frame_272_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0272_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.02317667007446289,
+        "total_velocity": 0.023205259814858437,
+        "vertex_displacement": 0.03869926556944847
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 273,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0273_obj_0/frame_273_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0273_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.0606844425201416,
+        "total_velocity": 0.06080774962902069,
+        "vertex_displacement": 0.06119801476597786
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 274,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0274_obj_0/frame_274_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0274_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.04904580116271973,
+        "total_velocity": 0.04987538605928421,
+        "vertex_displacement": 0.06299696117639542
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 275,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0275_obj_0/frame_275_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0275_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.07409000396728516,
+        "total_velocity": 0.07415449619293213,
+        "vertex_displacement": 0.022373337298631668
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 276,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0276_obj_0/frame_276_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0276_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.011632204055786133,
+        "total_velocity": 0.011708389967679977,
+        "vertex_displacement": 0.02852071262896061
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 277,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0277_obj_0/frame_277_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0277_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.024825572967529297,
+        "total_velocity": 0.0255400612950325,
+        "vertex_displacement": 0.036379266530275345
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 278,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0278_obj_0/frame_278_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0278_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.0022847652435302734,
+        "total_velocity": 0.0035617249086499214,
+        "vertex_displacement": 0.026779863983392715
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 279,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0279_obj_0/frame_279_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0279_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.0018765926361083984,
+        "total_velocity": 0.012066969648003578,
+        "vertex_displacement": 0.02513682097196579
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 280,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0280_obj_0/frame_280_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0280_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.03288531303405762,
+        "total_velocity": 0.03627188503742218,
+        "vertex_displacement": 0.0295513067394495
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 281,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0281_obj_0/frame_281_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0281_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.03254294395446777,
+        "total_velocity": 0.035572245717048645,
+        "vertex_displacement": 0.037170954048633575
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 282,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0282_obj_0/frame_282_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0282_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.022074460983276367,
+        "total_velocity": 0.027040105313062668,
+        "vertex_displacement": 0.03876907005906105
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 283,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0283_obj_0/frame_283_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0283_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.019671916961669922,
+        "total_velocity": 0.020760100334882736,
+        "vertex_displacement": 0.03448648378252983
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 284,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0284_obj_0/frame_284_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0284_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.037905216217041016,
+        "total_velocity": 0.04231349006295204,
+        "vertex_displacement": 0.048451121896505356
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 285,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0285_obj_0/frame_285_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0285_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.034867286682128906,
+        "total_velocity": 0.03779707849025726,
+        "vertex_displacement": 0.02640000730752945
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 286,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0286_obj_0/frame_286_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0286_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.10736632347106934,
+        "total_velocity": 0.1074926108121872,
+        "vertex_displacement": 0.03540593758225441
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 287,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0287_obj_0/frame_287_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0287_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.03989362716674805,
+        "total_velocity": 0.04176480695605278,
+        "vertex_displacement": 0.038289256393909454
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 288,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0288_obj_0/frame_288_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0288_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.08375668525695801,
+        "total_velocity": 0.08387670665979385,
+        "vertex_displacement": 0.048243921250104904
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 289,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0289_obj_0/frame_289_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0289_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.011754989624023438,
+        "total_velocity": 0.012472452595829964,
+        "vertex_displacement": 0.023735374212265015
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 290,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0290_obj_0/frame_290_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0290_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.06711339950561523,
+        "total_velocity": 0.06719683855772018,
+        "vertex_displacement": 0.028464533388614655
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 291,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0291_obj_0/frame_291_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0291_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.0372471809387207,
+        "total_velocity": 0.037472669035196304,
+        "vertex_displacement": 0.031661756336688995
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 292,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0292_obj_0/frame_292_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0292_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.03626084327697754,
+        "total_velocity": 0.036710143089294434,
+        "vertex_displacement": 0.034458111971616745
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 293,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0293_obj_0/frame_293_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0293_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.023659467697143555,
+        "total_velocity": 0.024738788604736328,
+        "vertex_displacement": 0.02355646900832653
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 294,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0294_obj_0/frame_294_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0294_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.04943418502807617,
+        "total_velocity": 0.049676984548568726,
+        "vertex_displacement": 0.012827788479626179
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 295,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0295_obj_0/frame_295_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0295_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.02953958511352539,
+        "total_velocity": 0.029689079150557518,
+        "vertex_displacement": 0.019142042845487595
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 296,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0296_obj_0/frame_296_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0296_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.06201887130737305,
+        "total_velocity": 0.06221771612763405,
+        "vertex_displacement": 0.026562470942735672
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 297,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0297_obj_0/frame_297_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0297_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.03319692611694336,
+        "total_velocity": 0.03322991728782654,
+        "vertex_displacement": 0.02065514586865902
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 298,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0298_obj_0/frame_298_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0298_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.06839990615844727,
+        "total_velocity": 0.06840261071920395,
+        "vertex_displacement": 0.016123423352837563
+      },
+      "reason": null
+    }
+  },
+  {
+    "frame_idx": 299,
+    "object_id": 0,
+    "ply_files": [
+      "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0299_obj_0/frame_299_obj_0_mesh_000.ply"
+    ],
+    "mesh_output_dir": "output/Infant_babbling_in_crib/Infant_babbling_in_crib_meshes/frame_0299_obj_0",
+    "score": 0.9765625,
+    "quality": {
+      "is_good": true,
+      "flags": [],
+      "metrics": {
+        "z_velocity": 0.0829768180847168,
+        "total_velocity": 0.08369970321655273,
+        "vertex_displacement": 0.02650965191423893
+      },
+      "reason": null
+    }
+  }
+]

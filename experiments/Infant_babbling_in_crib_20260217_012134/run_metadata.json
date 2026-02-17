@@ -1,0 +1,43 @@
+{
+  "run_id": "Infant_babbling_in_crib_20260217_012134",
+  "run_dir": "experiments/Infant_babbling_in_crib_20260217_012134",
+  "start_time": "2026-02-17T01:21:34.296886",
+  "config": {
+    "input": "data/Infant_babbling_in_crib.mp4",
+    "experiment_name": null,
+    "text_prompt": "a baby",
+    "output_dir": "output",
+    "processing": {
+      "max_frames": 300,
+      "skip_mesh_generation": {},
+      "skip_mesh_saving": {},
+      "export_coco_csv": {},
+      "bundle_adjustment": true,
+      "constrain_torso": {},
+      "temporal_smooth_keypoints": true,
+      "temporal_smooth_window": {},
+      "temporal_smooth_polyorder": {},
+      "smoothing_sigma": {}
+    },
+    "quality": {
+      "enable_filter": true,
+      "z_velocity_threshold": {},
+      "total_velocity_threshold": {},
+      "vertex_displacement_threshold": {}
+    },
+    "metrics": {
+      "enable_metrics": true,
+      "enable_plots": true
+    },
+    "num_videos": 1
+  },
+  "status": "completed",
+  "results": {
+    "Infant_babbling_in_crib_num_frames": 300,
+    "Infant_babbling_in_crib_good_frames": 300,
+    "Infant_babbling_in_crib_status": "completed"
+  },
+  "errors": [],
+  "end_time": "2026-02-17T01:25:43.114839",
+  "duration_seconds": 248.817953
+}

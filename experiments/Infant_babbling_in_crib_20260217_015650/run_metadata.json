@@ -1,0 +1,44 @@
+{
+  "run_id": "Infant_babbling_in_crib_20260217_015650",
+  "run_dir": "experiments/Infant_babbling_in_crib_20260217_015650",
+  "start_time": "2026-02-17T01:56:50.692037",
+  "config": {
+    "input": "data/Infant_babbling_in_crib.mp4",
+    "experiment_name": null,
+    "text_prompt": "a baby",
+    "output_dir": "output",
+    "processing": {
+      "max_frames": 300,
+      "skip_mesh_generation": {},
+      "skip_mesh_saving": {},
+      "export_coco_csv": true,
+      "bundle_adjustment": true,
+      "constrain_torso": {},
+      "temporal_smooth_keypoints": true,
+      "temporal_smooth_window": {},
+      "temporal_smooth_polyorder": {},
+      "smoothing_sigma": {}
+    },
+    "quality": {
+      "enable_filter": true,
+      "z_velocity_threshold": {},
+      "total_velocity_threshold": {},
+      "vertex_displacement_threshold": {}
+    },
+    "metrics": {
+      "enable_metrics": true,
+      "enable_plots": true
+    },
+    "num_videos": 1
+  },
+  "status": "failed",
+  "results": {},
+  "errors": [
+    {
+      "timestamp": "2026-02-17T02:01:32.417094",
+      "error": "'<' not supported between instances of 'int' and 'dict'"
+    }
+  ],
+  "end_time": "2026-02-17T02:01:32.417108",
+  "duration_seconds": 281.725071
+}
