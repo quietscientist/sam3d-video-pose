@@ -100,6 +100,13 @@ Output: {output_dir}/
     temporal_smooth_polyorder = processing.get('temporal_smooth_polyorder', 3)
     smoothing_sigma = processing.get('smoothing_sigma', 2.0)
 
+    # Tracking parameters
+    tracking = config.get('tracking', {})
+    tracking_arg = ''
+    if tracking:
+        import json as json_mod
+        tracking_arg = f"--tracking-params '{json_mod.dumps(tracking)}'"
+
     process_cmd = (
         f"source ~/.venv-camt/bin/activate && "
         f"python scripts/process_video.py "
@@ -111,7 +118,8 @@ Output: {output_dir}/
         f"--temporal-smooth-window {temporal_smooth_window} "
         f"--temporal-smooth-polyorder {temporal_smooth_polyorder} "
         f"--smoothing-sigma {smoothing_sigma} "
-        f"{constrain_torso}"
+        f"{constrain_torso} "
+        f"{tracking_arg}"
     ).strip()
 
     run_command(process_cmd, "Step 1/3: Processing video and extracting 3D COCO keypoints")

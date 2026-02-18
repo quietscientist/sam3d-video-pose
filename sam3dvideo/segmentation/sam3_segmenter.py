@@ -13,16 +13,25 @@ from accelerate import Accelerator
 class SAM3Segmenter:
     """Segments videos using SAM3 model."""
 
-    def __init__(self, device=None, chunk_size=50):
+    ALLOWED_TRACKING_PARAMS = {
+        'max_num_objects', 'new_det_thresh', 'score_threshold_detection',
+        'assoc_iou_thresh', 'min_trk_keep_alive', 'max_trk_keep_alive',
+        'hotstart_delay', 'recondition_every_nth_frame',
+    }
+
+    def __init__(self, device=None, chunk_size=50, tracking_params=None):
         """
         Initialize SAM3 segmenter.
 
         Args:
             device: Torch device (will auto-detect if None)
             chunk_size: Number of frames to process per chunk
+            tracking_params: Dict of SAM3 tracking parameter overrides (e.g.
+                {'max_num_objects': 1, 'new_det_thresh': 0.9})
         """
         self.device = device or Accelerator().device
         self.chunk_size = chunk_size
+        self.tracking_params = tracking_params or {}
         self.sam_model = None
         self.sam_processor = None
         self._load_models()
@@ -34,6 +43,17 @@ class SAM3Segmenter:
             self.device, dtype=torch.bfloat16
         )
         self.sam_processor = Sam3VideoProcessor.from_pretrained("facebook/sam3")
+
+        if self.tracking_params:
+            print("  Applying tracking parameter overrides:")
+            for param, value in self.tracking_params.items():
+                if param not in self.ALLOWED_TRACKING_PARAMS:
+                    print(f"    ⚠ Unknown tracking parameter '{param}', skipping")
+                    continue
+                old_value = getattr(self.sam_model, param, None)
+                setattr(self.sam_model, param, value)
+                print(f"    {param}: {old_value} → {value}")
+
         print(f"✓ Loaded on {self.device}")
 
     def segment_video_chunks(self, video_path, text_prompt, max_frames, start_idx=0):

@@ -104,7 +104,8 @@ class ConfigLoader:
             'metrics': {
                 'enable_metrics': True,
                 'enable_plots': True,
-            }
+            },
+            'tracking': {},
         }
 
         # Deep merge

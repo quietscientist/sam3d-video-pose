@@ -60,7 +60,8 @@ class VideoProcessor:
                  temporal_smooth_keypoints=True, temporal_smooth_window=11,
                  temporal_smooth_polyorder=3, quality_z_velocity_threshold=0.15,
                  quality_total_velocity_threshold=0.25, quality_vertex_displacement_threshold=0.08,
-                 enable_metrics=True, enable_plots=True):
+                 enable_metrics=True, enable_plots=True,
+                 tracking_params=None):
         """
         Initialize video processor.
 
@@ -101,6 +102,7 @@ class VideoProcessor:
         self.temporal_smooth_polyorder = temporal_smooth_polyorder
         self.enable_metrics = enable_metrics
         self.enable_plots = enable_plots
+        self.tracking_params = tracking_params or {}
         self.video_name = Path(video_path).stem
 
         # Ensure output directory exists
@@ -179,7 +181,7 @@ class VideoProcessor:
         print("="*60 + "\n")
 
         # Initialize models
-        self.segmenter = SAM3Segmenter()
+        self.segmenter = SAM3Segmenter(tracking_params=self.tracking_params)
 
         # Only load mesh estimator if needed
         if not self.skip_mesh_generation:
@@ -626,6 +628,9 @@ def main():
                        help="Disable comprehensive metrics logging and reports")
     parser.add_argument("--no-plots", action="store_true",
                        help="Disable plot generation (still generate metrics)")
+    parser.add_argument("--tracking-params", type=str, default=None,
+                       help='SAM3 tracking parameter overrides as JSON string, '
+                            'e.g. \'{"max_num_objects": 1, "new_det_thresh": 0.9}\'')
 
     args = parser.parse_args()
 
@@ -742,6 +747,15 @@ def main():
     else:
         enable_plots = config.get('metrics', {}).get('enable_plots', True)
 
+    # Tracking parameters (JSON string from CLI, or dict from config)
+    tracking_params = {}
+    config_tracking = config.get('tracking', {})
+    if config_tracking:
+        tracking_params.update(config_tracking)
+    if args.tracking_params:
+        import json as json_mod
+        tracking_params.update(json_mod.loads(args.tracking_params))
+
     # Get list of videos to process
     video_files = []
     if input_path.is_file():
@@ -792,6 +806,7 @@ def main():
             'enable_metrics': enable_metrics,
             'enable_plots': enable_plots,
         },
+        'tracking': tracking_params,
         'num_videos': len(video_files),
     }
 
@@ -833,7 +848,8 @@ def main():
                 quality_total_velocity_threshold=quality_total_velocity,
                 quality_vertex_displacement_threshold=quality_vertex_displacement,
                 enable_metrics=enable_metrics,
-                enable_plots=enable_plots
+                enable_plots=enable_plots,
+                tracking_params=tracking_params
             )
 
             # Step 1: Process video

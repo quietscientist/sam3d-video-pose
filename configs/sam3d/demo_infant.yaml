@@ -35,6 +35,11 @@ metrics:
   enable_metrics: true
   enable_plots: true
 
+# SAM3 tracking parameters (single-subject lock-on)
+tracking:
+  max_num_objects: 1                   # Track only one subject
+  new_det_thresh: 0.9                  # High bar for spawning new tracks
+
 # Visualization parameters
 visualization:
   flip_z: true                         # Flip z-axis for correct orientation
