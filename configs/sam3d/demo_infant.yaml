@@ -1,0 +1,41 @@
+# Demo configuration for infant video processing
+# Usage: python scripts/demo.py --demo-infant
+# Note: Video URL is passed via command line, not in config
+
+experiment_name: demo_infant_babbling
+
+# Text prompt for segmentation
+text_prompt: "a baby"
+
+# Output directory
+output_dir: "output"
+
+# Processing parameters
+processing:
+  max_frames: 300                     # Process first 300 frames
+  skip_mesh_generation: false
+  skip_mesh_saving: false
+  export_coco_csv: true                # Export COCO 17-point CSV files
+  bundle_adjustment: true              # Apply bundle adjustment to fix bone lengths
+  constrain_torso: false               # IMPORTANT: Don't constrain torso for infants (allows spinal flexibility)
+  temporal_smooth_keypoints: true      # Apply Savitzky-Golay temporal smoothing
+  temporal_smooth_window: 11
+  temporal_smooth_polyorder: 3
+  smoothing_sigma: 2.0
+
+# Quality filter parameters
+quality:
+  enable_filter: false                 # Disable quality filtering for demo
+  z_velocity_threshold: 0.15
+  total_velocity_threshold: 0.25
+  vertex_displacement_threshold: 0.20
+
+# Metrics and logging
+metrics:
+  enable_metrics: true
+  enable_plots: true
+
+# Visualization parameters
+visualization:
+  flip_z: true                         # Flip z-axis for correct orientation
+  fps: 10                              # Animation frames per second
