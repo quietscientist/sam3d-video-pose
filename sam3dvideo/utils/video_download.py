@@ -20,6 +20,15 @@ class DownloadProgressBar(tqdm):
         self.update(b * bsize - self.n)
 
 
+def _get_ffmpeg_binary() -> str:
+    """Find ffmpeg binary: prefer imageio_ffmpeg bundled binary, fall back to system."""
+    try:
+        import imageio_ffmpeg
+        return imageio_ffmpeg.get_ffmpeg_exe()
+    except ImportError:
+        return 'ffmpeg'
+
+
 def download_video(url: str, output_path: str, show_progress: bool = True) -> str:
     """
     Download a video file from a URL.
@@ -55,19 +64,78 @@ def download_video(url: str, output_path: str, show_progress: bool = True) -> st
     return str(output_path)
 
 
-def convert_video_to_mp4(input_path: str, output_path: str = None,
-                         codec: str = 'libx264', crf: int = 23,
-                         remove_source: bool = False, use_moviepy: bool = True) -> str:
+def validate_conversion_brightness(input_path: str, output_path: str,
+                                   ffmpeg_bin: str = None,
+                                   threshold: float = 0.15) -> bool:
     """
-    Convert a video file to MP4 format using moviepy (preferred) or ffmpeg.
+    Check that conversion didn't significantly darken the video by comparing
+    mean brightness of a frame from source vs output.
+
+    Returns True if brightness looks OK, False if there's a problem.
+    """
+    import numpy as np
+
+    if ffmpeg_bin is None:
+        ffmpeg_bin = _get_ffmpeg_binary()
+
+    def get_mean_brightness(video_path: str) -> float:
+        """Extract a frame at 1s and compute mean pixel intensity."""
+        cmd = [
+            ffmpeg_bin,
+            '-ss', '0.5',
+            '-i', str(video_path),
+            '-frames:v', '1',
+            '-f', 'rawvideo',
+            '-pix_fmt', 'rgb24',
+            '-v', 'error',
+            'pipe:1'
+        ]
+        try:
+            result = subprocess.run(cmd, capture_output=True, timeout=30)
+            if result.returncode != 0 or len(result.stdout) == 0:
+                return -1.0
+            frame = np.frombuffer(result.stdout, dtype=np.uint8)
+            return float(frame.mean()) / 255.0
+        except Exception:
+            return -1.0
+
+    src_brightness = get_mean_brightness(input_path)
+    dst_brightness = get_mean_brightness(output_path)
+
+    if src_brightness < 0 or dst_brightness < 0:
+        print("  ⚠ Could not validate brightness (frame extraction failed)")
+        return True  # can't validate, assume OK
+
+    diff = abs(src_brightness - dst_brightness)
+    ratio = dst_brightness / max(src_brightness, 0.01)
+
+    print(f"  Brightness check: source={src_brightness:.3f}, output={dst_brightness:.3f}, "
+          f"ratio={ratio:.2f}")
+
+    if diff > threshold or ratio < 0.7:
+        print(f"  ⚠ WARNING: Significant brightness change detected "
+              f"(diff={diff:.3f}, ratio={ratio:.2f})")
+        return False
+
+    print(f"  ✓ Brightness OK")
+    return True
+
+
+def convert_video_to_mp4(input_path: str, output_path: str = None,
+                         codec: str = 'libx264', crf: int = 18,
+                         remove_source: bool = False) -> str:
+    """
+    Convert a video file to MP4 format using ffmpeg directly.
+
+    Uses ffmpeg with explicit color space handling to avoid color profile
+    issues (e.g. limited-range YUV being misinterpreted as full-range).
 
     Args:
         input_path: Path to input video file
         output_path: Path for output MP4 file (auto-generated if None)
         codec: Video codec to use (default: libx264)
-        crf: Constant Rate Factor for quality (default: 23, lower=better)
+        crf: Constant Rate Factor for quality (default: 18, lower=better)
         remove_source: Remove source file after conversion
-        use_moviepy: Use moviepy instead of system ffmpeg (default: True)
 
     Returns:
         Path to converted MP4 file
@@ -85,69 +153,84 @@ def convert_video_to_mp4(input_path: str, output_path: str = None,
     print(f"Input: {input_path}")
     print(f"Output: {output_path}")
 
-    # Try moviepy first (includes bundled ffmpeg)
-    if use_moviepy:
-        try:
-            from moviepy import VideoFileClip
+    ffmpeg_bin = _get_ffmpeg_binary()
 
-            print("Using moviepy for conversion...")
-            clip = VideoFileClip(str(input_path))
-            clip.write_videofile(
-                str(output_path),
-                codec=codec,
-                audio_codec='aac',
-                temp_audiofile='temp-audio.m4a',
-                remove_temp=True,
-                logger=None  # Suppress verbose output
-            )
-            clip.close()
+    # Use ffmpeg directly with explicit color handling.
+    # -pix_fmt yuv420p: standard pixel format for broad compatibility
+    # -colorspace bt709 -color_trc bt709 -color_primaries bt709: explicit BT.709
+    # -color_range tv: preserve limited range (16-235) to avoid dark output
+    cmd = [
+        ffmpeg_bin,
+        '-i', str(input_path),
+        '-c:v', codec,
+        '-crf', str(crf),
+        '-pix_fmt', 'yuv420p',
+        '-colorspace', 'bt709',
+        '-color_trc', 'bt709',
+        '-color_primaries', 'bt709',
+        '-color_range', 'tv',
+        '-c:a', 'aac',
+        '-b:a', '128k',
+        '-movflags', '+faststart',
+        '-y',
+        str(output_path)
+    ]
 
-            print(f"✓ Conversion complete: {output_path}")
+    print(f"Using ffmpeg: {ffmpeg_bin}")
 
-            # Remove source file if requested
-            if remove_source and input_path != output_path:
-                print(f"Removing source file: {input_path}")
-                input_path.unlink()
+    try:
+        result = subprocess.run(cmd, capture_output=True, text=True, timeout=300)
+        if result.returncode != 0:
+            raise subprocess.CalledProcessError(result.returncode, cmd, result.stdout, result.stderr)
 
-            return str(output_path)
+        print(f"✓ Conversion complete: {output_path}")
 
-        except ImportError:
-            print("moviepy not available, trying system ffmpeg...")
-            use_moviepy = False
-        except Exception as e:
-            print(f"moviepy conversion failed: {e}")
-            print("Falling back to system ffmpeg...")
-            use_moviepy = False
+        # Validate brightness wasn't mangled by conversion
+        brightness_ok = validate_conversion_brightness(
+            str(input_path), str(output_path), ffmpeg_bin
+        )
+        if not brightness_ok:
+            print("  Retrying conversion with explicit color range conversion...")
+            # Retry with explicit scale filter to normalize color range
+            cmd_retry = [
+                ffmpeg_bin,
+                '-i', str(input_path),
+                '-vf', 'scale=in_range=tv:out_range=pc,scale=in_range=pc:out_range=tv',
+                '-c:v', codec,
+                '-crf', str(crf),
+                '-pix_fmt', 'yuv420p',
+                '-colorspace', 'bt709',
+                '-color_trc', 'bt709',
+                '-color_primaries', 'bt709',
+                '-color_range', 'tv',
+                '-c:a', 'aac',
+                '-b:a', '128k',
+                '-movflags', '+faststart',
+                '-y',
+                str(output_path)
+            ]
+            result2 = subprocess.run(cmd_retry, capture_output=True, text=True, timeout=300)
+            if result2.returncode != 0:
+                print(f"  ⚠ Retry also failed, keeping first conversion")
+            else:
+                validate_conversion_brightness(
+                    str(input_path), str(output_path), ffmpeg_bin
+                )
 
-    # Fallback to system ffmpeg
-    if not use_moviepy:
-        cmd = [
-            'ffmpeg',
-            '-i', str(input_path),
-            '-c:v', codec,
-            '-crf', str(crf),
-            '-c:a', 'aac',
-            '-b:a', '128k',
-            '-movflags', '+faststart',
-            '-y',
-            str(output_path)
-        ]
+        if remove_source and input_path != output_path:
+            print(f"Removing source file: {input_path}")
+            input_path.unlink()
 
-        try:
-            result = subprocess.run(cmd, check=True, capture_output=True, text=True)
-            print(f"✓ Conversion complete: {output_path}")
+        return str(output_path)
 
-            if remove_source and input_path != output_path:
-                print(f"Removing source file: {input_path}")
-                input_path.unlink()
-
-            return str(output_path)
-
-        except subprocess.CalledProcessError as e:
-            print(f"✗ FFmpeg error: {e.stderr}")
-            raise RuntimeError(f"Failed to convert video: {e}")
-        except FileNotFoundError:
-            raise RuntimeError("ffmpeg not found. Install with: pip install moviepy OR sudo apt install ffmpeg")
+    except subprocess.CalledProcessError as e:
+        stderr = e.stderr if e.stderr else ''
+        print(f"✗ FFmpeg error: {stderr[:500]}")
+        raise RuntimeError(f"Failed to convert video: {e}")
+    except FileNotFoundError:
+        raise RuntimeError(
+            "ffmpeg not found. Install with: pip install imageio-ffmpeg OR sudo apt install ffmpeg"
+        )
 
 
 def download_and_convert_video(url: str, output_dir: str = "data",
