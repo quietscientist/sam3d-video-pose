@@ -692,9 +692,15 @@ def main():
         if isinstance(config_keys, list):
             for key in config_keys:
                 val = config
-                for k in key.split('.'):
-                    val = val.get(k, {}) if isinstance(val, dict) else default
-                if val != default and val is not None:
+                parts = key.split('.')
+                for i, k in enumerate(parts):
+                    if not isinstance(val, dict):
+                        val = default
+                        break
+                    # Use default (not {}) for the final key so missing leaves
+                    # don't return an empty dict
+                    val = val.get(k, default if i == len(parts) - 1 else {})
+                if val != default and val is not None and not isinstance(val, dict):
                     return val
         else:
             config_val = config.get(config_keys, default)
