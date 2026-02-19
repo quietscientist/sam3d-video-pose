@@ -54,20 +54,31 @@ SKELETON_CONNECTIONS = [
 
 
 def load_keypoints_from_csv(csv_path):
-    """Load 3D COCO keypoints from wide CSV format."""
+    """Load 3D COCO keypoints from CSV (auto-detects long vs wide format)."""
     df = pd.read_csv(csv_path)
 
     frames = {}
-    for _, row in df.iterrows():
-        frame_idx = int(row['frame'])
-        keypoints_3d = np.zeros((17, 3))
 
-        for i, name in enumerate(COCO_KEYPOINT_NAMES):
-            keypoints_3d[i, 0] = row[f'{name}_x']
-            keypoints_3d[i, 1] = row[f'{name}_y']
-            keypoints_3d[i, 2] = row[f'{name}_z']
-
-        frames[frame_idx] = keypoints_3d
+    if 'part_idx' in df.columns:
+        # Long format: frame, x, y, z, part_idx
+        for frame_idx, group in df.groupby('frame'):
+            group = group.sort_values('part_idx')
+            keypoints_3d = np.zeros((17, 3))
+            for _, row in group.iterrows():
+                idx = int(row['part_idx'])
+                if idx < 17:
+                    keypoints_3d[idx] = [row['x'], row['y'], row['z']]
+            frames[int(frame_idx)] = keypoints_3d
+    else:
+        # Wide format: frame, nose_x, nose_y, nose_z, ...
+        for _, row in df.iterrows():
+            frame_idx = int(row['frame'])
+            keypoints_3d = np.zeros((17, 3))
+            for i, name in enumerate(COCO_KEYPOINT_NAMES):
+                keypoints_3d[i, 0] = row[f'{name}_x']
+                keypoints_3d[i, 1] = row[f'{name}_y']
+                keypoints_3d[i, 2] = row[f'{name}_z']
+            frames[frame_idx] = keypoints_3d
 
     print(f"✓ Loaded COCO 3D keypoints for {len(frames)} frames from {csv_path}")
     return frames

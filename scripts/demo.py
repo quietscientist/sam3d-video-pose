@@ -79,9 +79,8 @@ This demo will:
   1. Download video from source
   2. Process video with SAM3D + SAM-3D-Body to extract COCO keypoints
   3. Apply bundle adjustment to enforce fixed bone lengths
-  4. Convert keypoints to wide CSV format
-  5. Generate animated GIF visualization
-  6. Overlay skeleton on original video with bright colors
+  4. Generate animated GIF visualization with world-aligned ground plane
+  5. Overlay skeleton on original video with bright colors
 
 Config: {config_path}
 Video: {video_url}
@@ -136,35 +135,24 @@ Output: {output_dir}/
         shutil.move(str(video_output_path), str(demo_output_path))
         print(f"✓ Moved output to {demo_output_path}")
 
-    # Step 2: Convert to wide format (use bundle-adjusted version for fixed bone lengths)
-    # Files are now in demo_output_path
+    # Step 2: Visualize (reads long-format CSV directly)
+    # Use bundle-adjusted version for fixed bone lengths
     adjusted_csv = demo_output_path / f"{video_filename}_3D_smoothed_adjusted.csv"
-    wide_csv = demo_output_path / f"{video_filename}_3D_wide.csv"
-
-    convert_cmd = (
-        f"source ~/.venv-camt/bin/activate && "
-        f"python scripts/convert_coco_csv.py "
-        f"{adjusted_csv} "
-        f"{wide_csv}"
-    )
-    run_command(convert_cmd, "Step 2/3: Converting bundle-adjusted CSV to wide format")
-
-    # Step 3: Visualize
     output_gif = demo_output_path / f"{video_filename}_skeleton.gif"
     flip_z_flag = "--flip-z" if flip_z else ""
 
     visualize_cmd = (
         f"source ~/.venv-camt/bin/activate && "
         f"python scripts/visualize_3d_keypoints.py "
-        f"{wide_csv} "
+        f"{adjusted_csv} "
         f"--mode animation "
         f"--output {output_gif} "
         f"--fps {fps} "
         f"{flip_z_flag}"
     )
-    run_command(visualize_cmd, "Step 3/4: Generating animated skeleton visualization")
+    run_command(visualize_cmd, "Step 2/3: Generating animated skeleton visualization")
 
-    # Step 4: Overlay skeleton on video (optional)
+    # Step 3: Overlay skeleton on video (optional)
     overlay_video_path = None
     if overlay_video:
         # Find the downloaded/converted video
@@ -181,11 +169,11 @@ Output: {output_dir}/
                 f"source ~/.venv-camt/bin/activate && "
                 f"python scripts/overlay_skeleton_on_video.py "
                 f"{video_path} "
-                f"{wide_csv} "
+                f"{adjusted_csv} "
                 f"{meshes_dir} "
                 f"--output {overlay_video_path}"
             )
-            run_command(overlay_cmd, "Step 4/4: Overlaying skeleton on original video")
+            run_command(overlay_cmd, "Step 3/3: Overlaying skeleton on original video")
         else:
             if not video_path.exists():
                 print(f"⚠ Warning: Could not find video file at {video_path}")
@@ -203,8 +191,7 @@ Output: {output_dir}/
 
 Output files:
   📁 Demo directory:      {demo_output_path}/
-  📊 Adjusted CSV (long): {adjusted_csv}
-  📊 Adjusted CSV (wide): {wide_csv}
+  📊 Adjusted CSV:        {adjusted_csv}
   🎬 Skeleton GIF:        {output_gif}
 {overlay_line}
 Note: The skeleton visualization uses bundle-adjusted keypoints with fixed bone lengths.
