@@ -74,14 +74,27 @@ def compute_head_direction(kp):
     sternum = (kp[5] + kp[6]) / 2.0
     pelvis = (kp[11] + kp[12]) / 2.0
     spine = sternum - pelvis
+    spine_n = spine / (np.linalg.norm(spine) + 1e-8)
 
     shoulders = kp[5] - kp[6]
-    chest = -np.cross(spine, shoulders)
+    chest = -np.cross(spine_n, shoulders)
     chest /= (np.linalg.norm(chest) + 1e-8)
 
     # --- Align gaze sign with torso ---
     if np.dot(forward, chest) < 0:
         forward = -forward
+
+    # --- Remove spine component (nose sits below the eyes anatomically, which
+    #     creates a spurious downward tilt in the cross-product face normal).
+    #     Projecting onto the plane perpendicular to the spine gives a gaze
+    #     direction that lies in the body's transverse plane.
+    #     For standing subjects: removes downward tilt.
+    #     For supine subjects: spine is horizontal so the upward gaze is preserved.
+    forward = forward - np.dot(forward, spine_n) * spine_n
+    norm = np.linalg.norm(forward)
+    if norm < 1e-6:
+        return None, None
+    forward /= norm
 
     return eye_mid, forward
 
