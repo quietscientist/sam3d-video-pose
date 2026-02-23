@@ -1,6 +1,23 @@
 # SAM3D Video Pose
 
-3D pose estimation from video using [SAM3](https://github.com/facebookresearch/segment-anything-3) segmentation and [SAM-3D-Body](https://github.com/facebookresearch/sam-3d-body) mesh reconstruction. Works on humans, animals, and other subjects -- point it at any video with a text prompt and get 3D COCO keypoints, skeleton overlays, and animated visualizations.
+3D pose estimation from video using [SAM3](https://github.com/facebookresearch/segment-anything-3) segmentation and [SAM-3D-Body](https://github.com/facebookresearch/sam-3d-body) mesh reconstruction. Works on humans, animals, and other subjects — point it at any video with a text prompt and get 3D COCO keypoints, skeleton overlays, and animated visualizations.
+
+## Demo
+
+<!-- <table>
+<tr>
+  <td align="center"><b>Adult walking</b></td>
+  <td align="center"><b>Toddler walking</b></td>
+  <td align="center"><b>Infant in crib</b></td>
+  <td align="center"><b>Macaque walking</b></td>
+</tr>
+<tr>
+  <td><img src="assets/demo_adult.gif" width="200"/></td>
+  <td><img src="assets/demo_toddler.gif" width="200"/></td>
+  <td><img src="assets/demo_infant.gif" width="200"/></td>
+  <td><img src="assets/demo_nhp.gif" width="200"/></td>
+</tr>
+</table> -->
 
 ## Getting Started
 
@@ -24,6 +41,10 @@ Each demo runs the full pipeline:
 
 Output lands in `output/demo_<name>/` with the overlay video, skeleton GIF, and CSV keypoint files.
 
+### Notes on Skeletal Geometry
+
+This pipeline applies the MHR adult pose prior to all extractions. Age/species-specific adjustments are in development.
+
 ### Process Your Own Video
 
 ```bash
@@ -43,13 +64,13 @@ python scripts/process_video.py "https://example.com/video.webm" \
 
 ```bash
 # Animated 3D skeleton GIF
-python scripts/visualize_3d_keypoints.py output/video_name/video_name_3D_wide.csv \
+python scripts/visualize_3d_keypoints.py output/video_name/video_name_3D_smoothed_adjusted.csv \
     --mode animation --output skeleton.gif --flip-z
 
 # Overlay skeleton on original video
 python scripts/overlay_skeleton_on_video.py \
     data/video.mp4 \
-    output/video_name/video_name_3D_wide.csv \
+    output/video_name/video_name_3D_smoothed_adjusted.csv \
     output/video_name/video_name_meshes
 ```
 
@@ -103,7 +124,7 @@ processing:
   max_frames: 300
   export_coco_csv: true
   bundle_adjustment: true
-  constrain_torso: false        # keep false for infants
+  constrain_torso: false        # generally keep false
   temporal_smooth_window: 11
   temporal_smooth_polyorder: 3
   smoothing_sigma: 2.0
@@ -144,7 +165,7 @@ python scripts/process_video.py video.mp4 \
 ### Text Prompts
 
 SAM3 uses text prompts for segmentation. More specific prompts help with tracking:
-
+- `"a person"` -- general person tracking
 - `"a baby"` -- general infant
 - `"a toddler walking in the center"` -- spatial + action hint
 - `"a monkey"` -- non-human primate
@@ -153,9 +174,9 @@ SAM3 uses text prompts for segmentation. More specific prompts help with trackin
 
 ```
 output/video_name/
-    video_name_3D_raw.csv                    # Raw COCO keypoints (long format)
-    video_name_3D_smoothed_adjusted.csv      # Bundle-adjusted (long format)
-    video_name_3D_wide.csv                   # Bundle-adjusted (wide format)
+    video_name_3D_raw.csv                    # Raw COCO keypoints before smoothing
+    video_name_3D_smoothed.csv               # Temporally smoothed keypoints
+    video_name_3D_smoothed_adjusted.csv      # Smoothed + bundle-adjusted (main output)
     video_name_skeleton.gif                  # 3D skeleton animation
     video_name_skeleton_overlay.mp4          # Skeleton overlaid on video
     video_name_meshes/                       # Per-frame MHR parameters
@@ -166,9 +187,8 @@ output/video_name/
     video_name_mesh_results.json            # Mesh metadata
 ```
 
-### CSV Formats
+All CSV files use long format: one row per keypoint per frame.
 
-**Long format** (`_3D_raw.csv`, `_3D_smoothed_adjusted.csv`): one row per keypoint per frame.
 ```
 frame,x,y,z,part_idx
 0,0.123,0.456,0.789,0
@@ -176,11 +196,7 @@ frame,x,y,z,part_idx
 ...
 ```
 
-**Wide format** (`_3D_wide.csv`): one row per frame, columns for each keypoint axis.
-```
-frame,nose_x,nose_y,nose_z,left_eye_x,...
-0,0.123,0.456,0.789,0.234,...
-```
+`part_idx` follows the COCO-17 ordering (0=nose, 1=left_eye, ..., 16=right_ankle).
 
 ## Pipeline Architecture
 
