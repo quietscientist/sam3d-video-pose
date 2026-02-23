@@ -32,7 +32,10 @@ dependencies = [
     "pillow>=10.0.0",
     "tqdm>=4.65.0",
     "trimesh>=4.0.0",
-    "moviepy>=1.0.3",
+    "imageio-ffmpeg>=0.4.9",
+    "pyyaml>=6.0",
+    "matplotlib>=3.7.0",
+    "seaborn>=0.12.0",
     "torch>=2.0.0",
     "torchvision>=0.15.0",
     "transformers>=4.30.0",
@@ -64,9 +67,8 @@ notebooks = [
     "ipywidgets>=8.0.0",
 ]
 
-# Visualization dependencies
+# Visualization dependencies (scripts only)
 viz = [
-    "matplotlib>=3.7.0",
     "pandas>=2.0.0",
 ]
 
@@ -76,10 +78,10 @@ all = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/yourusername/sam3d-video-pose"
-Repository = "https://github.com/yourusername/sam3d-video-pose"
-Issues = "https://github.com/yourusername/sam3d-video-pose/issues"
-Documentation = "https://github.com/yourusername/sam3d-video-pose/blob/main/README.md"
+Homepage = "https://github.com/quietscientist/sam3d-video-pose"
+Repository = "https://github.com/quietscientist/sam3d-video-pose"
+Issues = "https://github.com/quietscientist/sam3d-video-pose/issues"
+Documentation = "https://github.com/quietscientist/sam3d-video-pose/blob/main/README.md"
 
 [project.scripts]
 sam3dvideo = "sam3dvideo.cli:main"

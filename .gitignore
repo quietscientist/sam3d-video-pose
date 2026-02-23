@@ -6,6 +6,8 @@
 
 # External dependencies (git submodules - tracked separately)
 # Note: Keep submodules in git but ignore their generated files
+# Non-submodule model directories placed in external/ are never committed
+/external/smil/
 /external/sam-3d-body/__pycache__/
 /external/sam-3d-body/**/__pycache__/
 /external/sam-3d-body/**/*.pyc

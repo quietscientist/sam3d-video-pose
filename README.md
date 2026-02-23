@@ -63,15 +63,25 @@ python scripts/overlay_skeleton_on_video.py \
 ### Setup
 
 ```bash
-git clone --recursive https://github.com/yourusername/sam3d-video-pose.git
+git clone --recursive https://github.com/quietscientist/sam3d-video-pose.git
 cd sam3d-video-pose
+```
 
+**With uv (recommended):**
+```bash
+uv venv --python 3.10
+source .venv/bin/activate
+uv pip install -e .
+```
+
+**With pip:**
+```bash
 python3.10 -m venv .venv
 source .venv/bin/activate
 pip install -e .
 ```
 
-Set up HuggingFace token for model downloads:
+**HuggingFace token** (required for model downloads):
 ```bash
 echo "HF_TOKEN=your_token_here" > .env
 ```
