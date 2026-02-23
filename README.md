@@ -11,7 +11,6 @@ The fastest way to see the pipeline in action is with the built-in demos. Each d
 python scripts/demo.py --demo-toddler   # 18-month-old walking
 python scripts/demo.py --demo-infant     # baby in crib
 python scripts/demo.py --demo-nhp        # crab-eating macaque
-python scripts/demo.py --demo-raptor     # marsh harrier in flight
 ```
 
 Each demo runs the full pipeline:
@@ -148,7 +147,6 @@ SAM3 uses text prompts for segmentation. More specific prompts help with trackin
 - `"a baby"` -- general infant
 - `"a toddler walking in the center"` -- spatial + action hint
 - `"a monkey"` -- non-human primate
-- `"a bird"` -- avian subject
 
 ## Output Structure
 

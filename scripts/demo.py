@@ -15,7 +15,6 @@ from pathlib import Path
 DEMO_VIDEOS = {
     'nhp': 'https://upload.wikimedia.org/wikipedia/commons/f/f0/Crab_eating_macaque_walking.webm',
     'infant': 'https://upload.wikimedia.org/wikipedia/commons/8/84/Infant_babbling_in_crib.ogv',
-    'raptor': 'https://upload.wikimedia.org/wikipedia/commons/b/bb/2022-10-08_Naravni_rezervat_ORMO%C5%A0KE_LAGUNE_Circus_aeruginosus_UJEDA.webm',
     'toddler': 'https://upload.wikimedia.org/wikipedia/commons/f/f9/18_meses_-_Camina_solo.webm'
 }
 
@@ -214,9 +213,6 @@ Examples:
   # Run infant demo (baby babbling in crib)
   python scripts/demo.py --demo-infant
 
-  # Run raptor demo (marsh harrier bird of prey)
-  python scripts/demo.py --demo-raptor
-
   # Run toddler demo (18-month-old walking)
   python scripts/demo.py --demo-toddler
 
@@ -229,7 +225,6 @@ Examples:
 Available demos:
   --demo-nhp       Non-human primate (crab-eating macaque walking)
   --demo-infant    Human infant (baby babbling in crib)
-  --demo-raptor    Raptor/bird of prey (Western Marsh Harrier)
   --demo-toddler   Toddler (18-month-old walking)
         """
     )
@@ -243,11 +238,6 @@ Available demos:
         '--demo-infant',
         action='store_true',
         help='Run infant demo (baby babbling in crib)'
-    )
-    parser.add_argument(
-        '--demo-raptor',
-        action='store_true',
-        help='Run raptor demo (marsh harrier bird of prey)'
     )
     parser.add_argument(
         '--demo-toddler',
@@ -283,15 +273,12 @@ Available demos:
     elif args.demo_infant:
         config_path = project_root / "configs/sam3d/demo_infant.yaml"
         run_demo(config_path, demo_name='infant', output_dir=args.output_dir, fps=args.fps, overlay_video=not args.no_overlay_video)
-    elif args.demo_raptor:
-        config_path = project_root / "configs/sam3d/demo_raptor.yaml"
-        run_demo(config_path, demo_name='raptor', output_dir=args.output_dir, fps=args.fps, overlay_video=not args.no_overlay_video)
     elif args.demo_toddler:
         config_path = project_root / "configs/sam3d/demo_toddler.yaml"
         run_demo(config_path, demo_name='toddler', output_dir=args.output_dir, fps=args.fps, overlay_video=not args.no_overlay_video)
     else:
         parser.print_help()
-        print("\n❌ Error: Please specify a demo to run (e.g., --demo-nhp, --demo-infant, or --demo-raptor)")
+        print("\n❌ Error: Please specify a demo to run (e.g., --demo-nhp, --demo-infant, or --demo-toddler)")
         sys.exit(1)
 
 
