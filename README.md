@@ -8,9 +8,10 @@ The fastest way to see the pipeline in action is with the built-in demos. Each d
 
 ```bash
 # Pick a demo
-python scripts/demo.py --demo-toddler   # 18-month-old walking
+python scripts/demo.py --demo-adult      # adult walking
 python scripts/demo.py --demo-infant     # baby in crib
 python scripts/demo.py --demo-nhp        # crab-eating macaque
+python scripts/demo.py --demo-toddler    # 18-month-old walking
 ```
 
 Each demo runs the full pipeline:

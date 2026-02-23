@@ -13,8 +13,9 @@ from pathlib import Path
 
 # Demo video URLs (not stored in config to avoid ConfigLoader URL validation issues)
 DEMO_VIDEOS = {
-    'nhp': 'https://upload.wikimedia.org/wikipedia/commons/f/f0/Crab_eating_macaque_walking.webm',
-    'infant': 'https://upload.wikimedia.org/wikipedia/commons/8/84/Infant_babbling_in_crib.ogv',
+    'adult':   'https://upload.wikimedia.org/wikipedia/commons/3/30/Walking_in_the_sands.webm',
+    'nhp':     'https://upload.wikimedia.org/wikipedia/commons/f/f0/Crab_eating_macaque_walking.webm',
+    'infant':  'https://upload.wikimedia.org/wikipedia/commons/8/84/Infant_babbling_in_crib.ogv',
     'toddler': 'https://upload.wikimedia.org/wikipedia/commons/f/f9/18_meses_-_Camina_solo.webm'
 }
 
@@ -207,6 +208,9 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
+  # Run adult demo (person walking)
+  python scripts/demo.py --demo-adult
+
   # Run non-human primate demo (macaque walking)
   python scripts/demo.py --demo-nhp
 
@@ -217,18 +221,24 @@ Examples:
   python scripts/demo.py --demo-toddler
 
   # Run with custom output directory and FPS
-  python scripts/demo.py --demo-nhp --output-dir output/my_demo --fps 15
+  python scripts/demo.py --demo-adult --output-dir output/my_demo --fps 15
 
   # Skip video overlay
   python scripts/demo.py --demo-nhp --no-overlay-video
 
 Available demos:
+  --demo-adult     Adult human (person walking)
   --demo-nhp       Non-human primate (crab-eating macaque walking)
   --demo-infant    Human infant (baby babbling in crib)
   --demo-toddler   Toddler (18-month-old walking)
         """
     )
 
+    parser.add_argument(
+        '--demo-adult',
+        action='store_true',
+        help='Run adult demo (person walking)'
+    )
     parser.add_argument(
         '--demo-nhp',
         action='store_true',
@@ -267,7 +277,10 @@ Available demos:
     # Determine which demo to run
     project_root = Path(__file__).parent.parent
 
-    if args.demo_nhp:
+    if args.demo_adult:
+        config_path = project_root / "configs/sam3d/demo_adult.yaml"
+        run_demo(config_path, demo_name='adult', output_dir=args.output_dir, fps=args.fps, overlay_video=not args.no_overlay_video)
+    elif args.demo_nhp:
         config_path = project_root / "configs/sam3d/demo_nhp.yaml"
         run_demo(config_path, demo_name='nhp', output_dir=args.output_dir, fps=args.fps, overlay_video=not args.no_overlay_video)
     elif args.demo_infant:
