@@ -375,10 +375,10 @@ def draw_cone(ax, origin, direction, length=0.2, radius=0.05, resolution=30):
 
     T, R = np.meshgrid(theta, r)
 
-    # Cone in local coordinates: base (wide) at origin, tip (narrow) at front
+    # Cone in local coordinates: tip (narrow) at origin, base (wide) at front
     X = R * np.cos(T)
     Y = R * np.sin(T)
-    Z = (1 - R / radius) * length
+    Z = (R / radius) * length
 
     # Stack
     points = np.stack([X.flatten(), Y.flatten(), Z.flatten()])
@@ -461,17 +461,15 @@ def plot_3d_skeleton(ax, keypoints_3d, show_face=False, clean_style=True,
             [sternum[2], pelvis[2]], color='#2C3E50', linewidth=2,
             linestyle='--', zorder=5)
 
-    origin, fallback_forward = compute_head_direction(keypoints_3d)
-    forward = head_direction if head_direction is not None else fallback_forward
+    # TODO: re-visit cone direction — currently disabled due to frame-to-frame instability
+    # (MHR neck rotation column-sign ambiguity causes 180° flips; needs temporal smoothing)
+    # origin, fallback_forward = compute_head_direction(keypoints_3d)
+    # ... cone drawing code removed until stabilized ...
 
+    origin, _ = compute_head_direction(keypoints_3d)
     if origin is not None:
-        cone_length = 0.2 * global_bounds['ground_extent']
-        draw_cone(ax, origin, forward,
-                length=cone_length,
-                radius=0.08 * global_bounds['ground_extent'])
-        # Marker at cone tip (narrow end, in gaze direction)
-        tip = origin + forward * cone_length
-        ax.scatter(tip[0], tip[1], tip[2],
+        # Just mark the head keypoint (eye midpoint) without direction cone
+        ax.scatter(origin[0], origin[1], origin[2],
             c="#1F2DA5", marker='D', s=35, zorder=11)
 
     # Draw joints
@@ -649,10 +647,14 @@ def main():
         frames_data, orientation, global_bounds, R_world = world_align_frames(frames_data)
         show_ground = True
         # Rotate camera-space head directions into world frame and store per frame
+        # Must apply the same flip_z that was applied to keypoints before R_world
+        # was computed, so both live in the same coordinate space.
         if head_directions_cam:
             for fd in frames_data:
                 cam_dir = head_directions_cam.get(fd['frame_idx'])
                 if cam_dir is not None:
+                    if args.flip_z:
+                        cam_dir = cam_dir * np.array([1, 1, -1])
                     fd['head_direction'] = R_world @ cam_dir
 
     # Visualize
