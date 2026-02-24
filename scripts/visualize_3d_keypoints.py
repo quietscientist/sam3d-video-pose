@@ -152,6 +152,14 @@ def load_keypoints_from_csv(csv_path, flip_z=False):
     return frames
 
 
+def load_head_direction_csv(csv_path):
+    """Load per-frame head direction vectors (camera space) from _head_direction.csv.
+    Returns dict mapping frame_idx -> (3,) np.array."""
+    df = pd.read_csv(csv_path)
+    return {int(row.frame): np.array([row.hx, row.hy, row.hz])
+            for _, row in df.iterrows()}
+
+
 # ===================================================================
 # World alignment (gravity detection + rotation)
 # ===================================================================
@@ -338,7 +346,7 @@ def world_align_frames(frames_data):
         'ground_extent': max_range,  # fixed ground plane half-size
     }
 
-    return frames_data, orientation, global_bounds
+    return frames_data, orientation, global_bounds, R_world
 
 
 # ===================================================================
@@ -363,14 +371,14 @@ def draw_cone(ax, origin, direction, length=0.2, radius=0.05, resolution=30):
 
     # Create circular base
     theta = np.linspace(0, 2*np.pi, resolution)
-    r = np.linspace(0, radius, 2)  # 2 rows (tip to base)
+    r = np.linspace(0, radius, 2)  # 2 rows (base to tip)
 
     T, R = np.meshgrid(theta, r)
 
-    # Cone in local coordinates
+    # Cone in local coordinates: base (wide) at origin, tip (narrow) at front
     X = R * np.cos(T)
     Y = R * np.sin(T)
-    Z = (R / radius) * length
+    Z = (1 - R / radius) * length
 
     # Stack
     points = np.stack([X.flatten(), Y.flatten(), Z.flatten()])
@@ -396,7 +404,7 @@ def draw_cone(ax, origin, direction, length=0.2, radius=0.05, resolution=30):
 
 
 def plot_3d_skeleton(ax, keypoints_3d, show_face=False, clean_style=True,
-                     global_bounds=None, show_ground=False):
+                     global_bounds=None, show_ground=False, head_direction=None):
     """
     Plot 3D skeleton with bones and optional ground plane.
 
@@ -453,15 +461,17 @@ def plot_3d_skeleton(ax, keypoints_3d, show_face=False, clean_style=True,
             [sternum[2], pelvis[2]], color='#2C3E50', linewidth=2,
             linestyle='--', zorder=5)
 
-    origin, forward = compute_head_direction(keypoints_3d)
+    origin, fallback_forward = compute_head_direction(keypoints_3d)
+    forward = head_direction if head_direction is not None else fallback_forward
 
     if origin is not None:
+        cone_length = 0.2 * global_bounds['ground_extent']
         draw_cone(ax, origin, forward,
-                length=0.2 * global_bounds['ground_extent'],
+                length=cone_length,
                 radius=0.08 * global_bounds['ground_extent'])
-        
-            # Add keypoint at cone tip
-        ax.scatter(origin[0], origin[1], origin[2],
+        # Marker at cone tip (narrow end, in gaze direction)
+        tip = origin + forward * cone_length
+        ax.scatter(tip[0], tip[1], tip[2],
             c="#1F2DA5", marker='D', s=35, zorder=11)
 
     # Draw joints
@@ -517,7 +527,8 @@ def visualize_static(frames_data, output_path=None, show_face=False,
         ax.set_facecolor('white')
         plot_3d_skeleton(ax, frame['keypoints_3d'], show_face=show_face,
                          clean_style=clean_style, global_bounds=global_bounds,
-                         show_ground=show_ground)
+                         show_ground=show_ground,
+                         head_direction=frame.get('head_direction'))
         if not clean_style:
             ax.set_title(f"Frame {frame['frame_idx']}")
 
@@ -540,7 +551,8 @@ def visualize_animation(frames_data, output_path=None, show_face=False,
         frame = frames_data[frame_idx]
         plot_3d_skeleton(ax, frame['keypoints_3d'], show_face=show_face,
                          clean_style=clean_style, global_bounds=global_bounds,
-                         show_ground=show_ground)
+                         show_ground=show_ground,
+                         head_direction=frame.get('head_direction'))
         if not clean_style:
             ax.set_title(f"Frame {frame['frame_idx']}", fontsize=14)
         return ax,
@@ -615,13 +627,33 @@ def main():
         print("Error: No frames with valid keypoints found")
         return
 
+    # Auto-detect sibling _head_direction.csv from process_video.py output
+    head_directions_cam = {}
+    stem = input_path.stem
+    for suffix in ['_3D_smoothed_adjusted', '_3D_smoothed', '_3D_raw']:
+        if stem.endswith(suffix):
+            video_name = stem[:-len(suffix)]
+            break
+    else:
+        video_name = stem
+    head_dir_csv = input_path.parent / f"{video_name}_head_direction.csv"
+    if head_dir_csv.exists():
+        print(f"Loading MHR head directions from {head_dir_csv}")
+        head_directions_cam = load_head_direction_csv(head_dir_csv)
+
     # World alignment
     global_bounds = None
     show_ground = False
     if not args.no_world_align:
         print("Detecting camera orientation and aligning to world frame...")
-        frames_data, orientation, global_bounds = world_align_frames(frames_data)
+        frames_data, orientation, global_bounds, R_world = world_align_frames(frames_data)
         show_ground = True
+        # Rotate camera-space head directions into world frame and store per frame
+        if head_directions_cam:
+            for fd in frames_data:
+                cam_dir = head_directions_cam.get(fd['frame_idx'])
+                if cam_dir is not None:
+                    fd['head_direction'] = R_world @ cam_dir
 
     # Visualize
     if args.mode == 'static':

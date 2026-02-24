@@ -45,5 +45,5 @@ tracking:
 
 # Visualization parameters
 visualization:
-  flip_z: true                         # Flip z-axis for correct orientation
+  flip_z: false                        # No z-flip needed (world alignment handles orientation)
   fps: 10                              # Animation frames per second

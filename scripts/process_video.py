@@ -7,6 +7,7 @@ Usage:
 """
 
 import argparse
+import csv
 import os
 import sys
 import json
@@ -421,6 +422,20 @@ class VideoProcessor:
                     print(f"  Adjusted: {csv_results['adjusted']}")
             print("="*60 + "\n")
 
+        # Save per-frame head direction from MHR neck rotation params
+        # neck joint (idx 112) col-0 negated gives face-forward in camera space
+        if frame_to_mhr_params:
+            head_dir_path = os.path.join(self.output_dir, f"{self.video_name}_head_direction.csv")
+            with open(head_dir_path, 'w', newline='') as f:
+                writer = csv.writer(f)
+                writer.writerow(['frame', 'hx', 'hy', 'hz'])
+                for frame_idx in sorted(frame_to_mhr_params.keys()):
+                    rots = frame_to_mhr_params[frame_idx].get('pred_global_rots')
+                    if rots is not None and rots.shape[0] > 112:
+                        fwd = -rots[112, :, 0]
+                        writer.writerow([frame_idx, fwd[0], fwd[1], fwd[2]])
+            print(f"✓ Saved head directions to: {head_dir_path}")
+
         # Generate comprehensive metrics report
         if self.metrics_logger:
             print("\n" + "="*60)
@@ -513,6 +528,12 @@ class VideoProcessor:
         with open(results_summary_path, 'w') as f:
             json.dump(all_mesh_results, f, indent=2)
         print(f"✓ Saved mesh results summary to: {results_summary_path}")
+
+        # Video info (fps, dimensions, frame counts)
+        video_info_path = os.path.join(self.output_dir, f"{self.video_name}_video_info.json")
+        with open(video_info_path, 'w') as f:
+            json.dump(self.video_info, f, indent=2)
+        print(f"✓ Saved video info to: {video_info_path}")
 
     def smooth_and_export(self, processing_data):
         """Apply temporal smoothing and export smoothed meshes."""
