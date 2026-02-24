@@ -4,7 +4,7 @@
 
 ## Demo
 
-<!-- <table>
+<table>
 <tr>
   <td align="center"><b>Adult walking</b></td>
   <td align="center"><b>Toddler walking</b></td>
@@ -17,7 +17,7 @@
   <td><img src="assets/demo_infant.gif" width="200"/></td>
   <td><img src="assets/demo_nhp.gif" width="200"/></td>
 </tr>
-</table> -->
+</table>
 
 ## Getting Started
 
@@ -65,7 +65,7 @@ python scripts/process_video.py "https://example.com/video.webm" \
 ```bash
 # Animated 3D skeleton GIF
 python scripts/visualize_3d_keypoints.py output/video_name/video_name_3D_smoothed_adjusted.csv \
-    --mode animation --output skeleton.gif --flip-z
+    --mode animation --output skeleton.gif
 
 # Overlay skeleton on original video
 python scripts/overlay_skeleton_on_video.py \
