@@ -191,12 +191,10 @@ class TargetSelector:
                 + 0.5 * candidate.score
                 - 0.75 * area_penalty
             )
-            candidate.accepted = (
+            area_ok = candidate.area_ratio <= self.max_area_ratio or allow_reacquire
+            candidate.accepted = area_ok and (
                 candidate.iou >= self.min_iou
-                or (
-                    candidate.center_dist_norm <= self.max_center_jump
-                    and candidate.area_ratio <= self.max_area_ratio
-                )
+                or candidate.center_dist_norm <= self.max_center_jump
                 or allow_reacquire
             )
 
