@@ -132,6 +132,7 @@ processing:
 tracking:
   max_num_objects: 1             # single-subject lock-on
   new_det_thresh: 0.9            # high bar for spawning new tracks
+  target_lock: true              # pick one continuous target from SAM3 candidates
 
 quality:
   enable_filter: false
@@ -155,11 +156,15 @@ SAM3's tracking behavior is tunable via the `tracking:` section in config or `--
 | `max_trk_keep_alive` | 30 | Budget for matched frames |
 | `hotstart_delay` | 15 | Frames before output starts |
 | `recondition_every_nth_frame` | 16 | Re-init from detections frequency |
+| `target_lock` | auto for `max_num_objects: 1` | Wrapper-level continuity filter that emits one stable target ID |
+| `target_lock_candidate_count` | 5 | SAM3 candidate count used internally when target lock is active |
+| `target_max_center_jump` | 0.15 | Max normalized frame-to-frame center jump before rejecting a switch |
+| `target_min_iou` | 0.02 | Min mask IoU with the previous target for continuity |
 
 CLI override example:
 ```bash
 python scripts/process_video.py video.mp4 \
-    --tracking-params '{"max_num_objects": 1, "new_det_thresh": 0.9}'
+    --tracking-params '{"max_num_objects": 1, "new_det_thresh": 0.9, "target_lock": true}'
 ```
 
 ### Text Prompts

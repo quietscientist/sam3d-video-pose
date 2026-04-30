@@ -217,6 +217,7 @@ class VideoProcessor:
         frame_to_mhr_params = {}
         quality_log = []
         prev_mhr_params = None
+        prev_box = None  # last accepted bbox, used for 2D continuity checks
         faces = None
 
         masks_dir = os.path.join(self.output_dir, f"{self.video_name}_masks")
@@ -322,6 +323,26 @@ class VideoProcessor:
                     # Extract 2D keypoints (always, independent of mesh)
                     keypoints_2d = self.keypoint_extractor.extract_2d_keypoints(temp_frame_path, box)
 
+                    # 2D quality analysis (replaces 3D quality when mesh generation is skipped)
+                    if self.skip_mesh_generation:
+                        quality = self._analyze_2d_quality(
+                            score=score.item(),
+                            box=box,
+                            keypoints_2d=keypoints_2d,
+                            prev_box=prev_box,
+                            frame_hw=frame.shape[:2],
+                        )
+                        quality_log.append({
+                            'frame_idx': frame_idx,
+                            'object_id': obj_id.item(),
+                            'sam_score': quality['sam_score'],
+                            'quality': quality,
+                        })
+                        prev_box = box
+                        if self.enable_quality_filter and not quality['is_good']:
+                            print(f"  ⏭ Skipping frame {frame_idx}: {quality['reason']}")
+                            continue
+
                     # Create output directory for keypoints
                     mesh_output_dir = os.path.join(meshes_dir, f"frame_{frame_idx:04d}_obj_{obj_id.item()}")
                     os.makedirs(mesh_output_dir, exist_ok=True)
@@ -359,8 +380,10 @@ class VideoProcessor:
                 if os.path.exists(temp_frame_path):
                     os.remove(temp_frame_path)
 
-            # Carry last mask forward for next chunk's frame-0 seed
-            prev_mask = chunk_last_mask
+            # Carry the last accepted target mask forward. If target-lock rejected an
+            # entire chunk, keep the prior seed instead of erasing the identity.
+            if chunk_last_mask is not None:
+                prev_mask = chunk_last_mask
 
             # Clean up chunk
             gc.collect()
@@ -563,6 +586,51 @@ class VideoProcessor:
             json.dump(self.video_info, f, indent=2)
         print(f"✓ Saved video info to: {video_info_path}")
 
+    def _analyze_2d_quality(self, score, box, keypoints_2d, prev_box, frame_hw):
+        """2D quality signals: detection confidence, keypoint visibility, bbox continuity."""
+        issues = []
+        sam_score = float(score)
+        if sam_score < 0.5:
+            issues.append(f"low SAM score ({sam_score:.2f})")
+
+        # Mean visibility of key joints: shoulders (5,6) and hips (11,12)
+        mean_kp_visibility = 0.0
+        if keypoints_2d and 'keypoints' in keypoints_2d:
+            flat = keypoints_2d['keypoints']
+            if len(flat) >= 13 * 3:
+                kps = np.array(flat, dtype=float).reshape(-1, 3)
+                key_vis = [kps[i, 2] for i in (5, 6, 11, 12) if i < len(kps)]
+                mean_kp_visibility = float(np.mean(key_vis)) if key_vis else 0.0
+                if mean_kp_visibility < 0.3:
+                    issues.append(f"low keypoint visibility ({mean_kp_visibility:.2f})")
+
+        centroid_shift = 0.0
+        area_ratio = 1.0
+        if prev_box is not None:
+            frame_h, frame_w = frame_hw
+            diag = float(np.hypot(frame_w, frame_h)) or 1.0
+            cx_prev = (prev_box[0] + prev_box[2]) / 2
+            cy_prev = (prev_box[1] + prev_box[3]) / 2
+            cx_curr = (box[0] + box[2]) / 2
+            cy_curr = (box[1] + box[3]) / 2
+            centroid_shift = float(np.hypot(cx_curr - cx_prev, cy_curr - cy_prev) / diag)
+            area_prev = max((prev_box[2] - prev_box[0]) * (prev_box[3] - prev_box[1]), 1.0)
+            area_curr = max((box[2] - box[0]) * (box[3] - box[1]), 1.0)
+            area_ratio = float(max(area_curr / area_prev, area_prev / area_curr))
+            if centroid_shift > 0.15:
+                issues.append(f"bbox jump ({centroid_shift:.2f} diag) — possible person switch")
+            if area_ratio > 2.5:
+                issues.append(f"bbox area change ({area_ratio:.1f}x) — possible person switch")
+
+        return {
+            'is_good': len(issues) == 0,
+            'reason': '; '.join(issues) if issues else 'ok',
+            'sam_score': sam_score,
+            'mean_kp_visibility': mean_kp_visibility,
+            'bbox_centroid_shift': centroid_shift,
+            'bbox_area_ratio': area_ratio,
+        }
+
     def _smooth_and_export_2d_keypoints(self, all_mesh_results):
         """Smooth 2D keypoints over time and export JSON/CSV outputs."""
         all_keypoints = self._aggregate_keypoints(all_mesh_results)
@@ -672,7 +740,8 @@ class VideoProcessor:
                 if payload and 'keypoints' in payload:
                     max_kp_count = max(max_kp_count, len(payload['keypoints']) // 3)
 
-            header = ['frame', 'object_id']
+            header = ['frame', 'object_id', 'quality_is_good', 'quality_reason',
+                      'sam_score', 'mean_kp_visibility', 'bbox_centroid_shift', 'bbox_area_ratio']
             for kp_idx in range(max_kp_count):
                 header.extend([f'kp{kp_idx}_x', f'kp{kp_idx}_y', f'kp{kp_idx}_v'])
             writer.writerow(header)
@@ -681,11 +750,22 @@ class VideoProcessor:
                 payload = frame_data.get('keypoints_2d_smoothed') or frame_data.get('keypoints_2d')
                 if not payload or 'keypoints' not in payload:
                     continue
+                q = frame_data.get('quality') or {}
+                quality_is_good = q.get('is_good', '')
+                quality_reason = q.get('reason', '')
+                sam_score = q.get('sam_score', '')
+                mean_kp_vis = q.get('mean_kp_visibility', '')
+                bbox_shift = q.get('bbox_centroid_shift', '')
+                bbox_area = q.get('bbox_area_ratio', '')
                 row_keypoints = payload['keypoints']
                 expected_len = max_kp_count * 3
                 if len(row_keypoints) < expected_len:
                     row_keypoints = row_keypoints + [float('nan')] * (expected_len - len(row_keypoints))
-                writer.writerow([frame_data['frame_idx'], frame_data.get('object_id', 0), *row_keypoints])
+                writer.writerow([
+                    frame_data['frame_idx'], frame_data.get('object_id', 0),
+                    quality_is_good, quality_reason, sam_score, mean_kp_vis, bbox_shift, bbox_area,
+                    *row_keypoints,
+                ])
 
         print(f"✓ Saved smoothed 2D keypoints JSON: {smoothed_json_path}")
         print(f"✓ Saved smoothed 2D keypoints CSV: {smoothed_csv_path}")

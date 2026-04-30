@@ -4,11 +4,14 @@ SAM3 video segmentation processor.
 """
 
 import traceback
+import os
 import torch
 import cv2
 import numpy as np
 from transformers import Sam3VideoModel, Sam3VideoProcessor
 from accelerate import Accelerator
+
+from .target_selector import TargetLockDecision, TargetSelector
 
 
 class SAM3Segmenter:
@@ -18,6 +21,12 @@ class SAM3Segmenter:
         'max_num_objects', 'new_det_thresh', 'score_threshold_detection',
         'assoc_iou_thresh', 'min_trk_keep_alive', 'max_trk_keep_alive',
         'hotstart_delay', 'recondition_every_nth_frame',
+    }
+    WRAPPER_TRACKING_PARAMS = {
+        'target_lock', 'target_lock_candidate_count', 'target_output_object_id',
+        'target_initial_selection', 'target_min_iou', 'target_max_center_jump',
+        'target_max_area_ratio', 'target_reacquire_after',
+        'target_center_prior_weight',
     }
 
     def __init__(self, device=None, chunk_size=50, tracking_params=None):
@@ -33,29 +42,111 @@ class SAM3Segmenter:
         self.device = device or Accelerator().device
         self.chunk_size = chunk_size
         self.tracking_params = tracking_params or {}
+        self.target_lock_enabled = self._target_lock_default()
+        self.target_candidate_count = int(
+            self.tracking_params.get('target_lock_candidate_count', 5)
+        )
+        self.target_selector = TargetSelector(
+            enabled=self.target_lock_enabled,
+            output_object_id=int(self.tracking_params.get('target_output_object_id', 0)),
+            initial_selection=self.tracking_params.get('target_initial_selection', 'score_center'),
+            min_iou=float(self.tracking_params.get('target_min_iou', 0.02)),
+            max_center_jump=float(self.tracking_params.get('target_max_center_jump', 0.15)),
+            max_area_ratio=float(self.tracking_params.get('target_max_area_ratio', 4.0)),
+            reacquire_after=int(self.tracking_params.get('target_reacquire_after', 12)),
+            center_prior_weight=float(self.tracking_params.get('target_center_prior_weight', 0.25)),
+        )
         self.sam_model = None
         self.sam_processor = None
         self._load_models()
 
+    def _target_lock_default(self):
+        raw_value = self.tracking_params.get(
+            'target_lock',
+            self.tracking_params.get('max_num_objects') == 1,
+        )
+        if isinstance(raw_value, str):
+            return raw_value.lower() in {'1', 'true', 'yes', 'on'}
+        return bool(raw_value)
+
+    def _effective_model_tracking_params(self):
+        model_params = {}
+        for param, value in self.tracking_params.items():
+            if param in self.ALLOWED_TRACKING_PARAMS:
+                model_params[param] = value
+
+        if self.target_lock_enabled:
+            requested_max = model_params.get('max_num_objects')
+            if requested_max is None or int(requested_max) <= 1:
+                model_params['max_num_objects'] = max(self.target_candidate_count, 1)
+
+        return model_params
+
     def _load_models(self):
         """Load SAM3 models."""
         print("\nLoading SAM3 Video model...")
-        self.sam_model = Sam3VideoModel.from_pretrained("facebook/sam3").to(
-            self.device, dtype=torch.bfloat16
-        )
-        self.sam_processor = Sam3VideoProcessor.from_pretrained("facebook/sam3")
+        model_id = os.environ.get("SAM3_MODEL_ID", "facebook/sam3.1")
+        try:
+            self.sam_model = Sam3VideoModel.from_pretrained(model_id).to(
+                self.device, dtype=torch.bfloat16
+            )
+            self.sam_processor = Sam3VideoProcessor.from_pretrained(model_id)
+        except OSError as exc:
+            fallback_model_id = "facebook/sam3"
+            if model_id == fallback_model_id:
+                raise
+            print(f"  ⚠ Could not load {model_id}: {exc}")
+            print(f"  ↳ Falling back to {fallback_model_id}")
+            self.sam_model = Sam3VideoModel.from_pretrained(fallback_model_id).to(
+                self.device, dtype=torch.bfloat16
+            )
+            self.sam_processor = Sam3VideoProcessor.from_pretrained(fallback_model_id)
 
+        model_tracking_params = self._effective_model_tracking_params()
         if self.tracking_params:
             print("  Applying tracking parameter overrides:")
             for param, value in self.tracking_params.items():
-                if param not in self.ALLOWED_TRACKING_PARAMS:
+                if param not in self.ALLOWED_TRACKING_PARAMS and param not in self.WRAPPER_TRACKING_PARAMS:
                     print(f"    ⚠ Unknown tracking parameter '{param}', skipping")
-                    continue
+            for param, value in model_tracking_params.items():
                 old_value = getattr(self.sam_model, param, None)
                 setattr(self.sam_model, param, value)
                 print(f"    {param}: {old_value} → {value}")
 
+        if self.target_lock_enabled:
+            print(
+                "  Target lock: enabled "
+                f"(SAM3 candidates={model_tracking_params.get('max_num_objects')}, "
+                f"output_object_id={self.target_selector.output_object_id})"
+            )
+
         print(f"✓ Loaded on {self.device}")
+
+    def _log_target_decision(self, decision: TargetLockDecision):
+        if not decision.should_log:
+            return
+
+        if decision.selected:
+            if decision.reason == "initial_lock":
+                print(
+                    f"  Target lock frame {decision.frame_idx}: "
+                    f"locked source object {decision.source_object_id} "
+                    f"(score={decision.score:.3f})"
+                )
+            elif decision.reason == "source_changed":
+                print(
+                    f"  Target lock frame {decision.frame_idx}: "
+                    f"accepted source object {decision.source_object_id} "
+                    f"(IoU={decision.iou:.3f}, center_jump={decision.center_dist_norm:.3f})"
+                )
+        else:
+            details = ""
+            if decision.iou is not None and decision.center_dist_norm is not None:
+                details = (
+                    f" (best source={decision.source_object_id}, "
+                    f"IoU={decision.iou:.3f}, center_jump={decision.center_dist_norm:.3f})"
+                )
+            print(f"  Target lock frame {decision.frame_idx}: rejected {decision.reason}{details}")
 
     def segment_video_chunks(self, video_path, text_prompt, max_frames, start_idx=0,
                               prev_mask=None):
@@ -136,7 +227,10 @@ class SAM3Segmenter:
                 max_frame_num_to_track=len(chunk_frames)
             ):
                 processed = self.sam_processor.postprocess_outputs(session, model_outputs)
-                result[start_idx + model_outputs.frame_idx] = processed
+                abs_frame_idx = start_idx + model_outputs.frame_idx
+                processed, decision = self.target_selector.select(processed, abs_frame_idx)
+                self._log_target_decision(decision)
+                result[abs_frame_idx] = processed
             return result
 
         try:
