@@ -17,7 +17,7 @@ from sam3dvideo.utils import setup_sam_3d_body, process_image_with_mask
 class MeshEstimator:
     """Estimates 3D body meshes using SAM-3D-Body."""
 
-    def __init__(self, hf_repo_id="facebook/sam-3d-body-dinov3", device="cuda:1"):
+    def __init__(self, hf_repo_id="facebook/sam-3d-body-dinov3", device="cuda:0"):
         """
         Initialize mesh estimator.
 

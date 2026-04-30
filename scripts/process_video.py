@@ -11,12 +11,14 @@ import csv
 import os
 import sys
 import json
+from collections import Counter
 from pathlib import Path
 import torch
 import gc
 from tqdm import tqdm
 import numpy as np
 import cv2
+from scipy.signal import savgol_filter
 from dotenv import load_dotenv
 import trimesh
 
@@ -54,15 +56,17 @@ load_dotenv()
 class VideoProcessor:
     """Main orchestrator for video processing pipeline."""
 
-    def __init__(self, video_path, text_prompt="a baby", max_frames=300,
+    def __init__(self, video_path, text_prompt="a baby", max_frames=300, start_frame=0,
                  output_dir="output", enable_quality_filter=False, smoothing_sigma=2.0,
                  skip_mesh_generation=False, skip_mesh_saving=False,
                  export_coco_csv=False, bundle_adjustment=True, constrain_torso=False,
                  temporal_smooth_keypoints=True, temporal_smooth_window=11,
                  temporal_smooth_polyorder=3, quality_z_velocity_threshold=0.15,
                  quality_total_velocity_threshold=0.25, quality_vertex_displacement_threshold=0.08,
+                 fast_2d_only=False,
                  enable_metrics=True, enable_plots=True,
-                 tracking_params=None):
+                 tracking_params=None,
+                 chunk_size=50):
         """
         Initialize video processor.
 
@@ -84,12 +88,14 @@ class VideoProcessor:
             quality_z_velocity_threshold: Max Z-axis camera movement for quality (default: 0.15)
             quality_total_velocity_threshold: Max total camera movement for quality (default: 0.25)
             quality_vertex_displacement_threshold: Max vertex deformation for quality (default: 0.08)
+            fast_2d_only: If True, run SAM3 + ViTPose only with temporal smoothing
             enable_metrics: If True, track and log comprehensive metrics (default: True)
             enable_plots: If True, generate visualization plots (default: True)
         """
         self.video_path = video_path
         self.text_prompt = text_prompt
         self.max_frames = max_frames
+        self.start_frame = start_frame
         self.output_dir = output_dir
         self.enable_quality_filter = enable_quality_filter
         self.smoothing_sigma = smoothing_sigma
@@ -101,9 +107,11 @@ class VideoProcessor:
         self.temporal_smooth_keypoints = temporal_smooth_keypoints
         self.temporal_smooth_window = temporal_smooth_window
         self.temporal_smooth_polyorder = temporal_smooth_polyorder
+        self.fast_2d_only = fast_2d_only
         self.enable_metrics = enable_metrics
         self.enable_plots = enable_plots
         self.tracking_params = tracking_params or {}
+        self.chunk_size = chunk_size
         self.video_name = Path(video_path).stem
 
         # Ensure output directory exists
@@ -163,7 +171,9 @@ class VideoProcessor:
             dict: Processing results including meshes, keypoints, quality log
         """
         print("\n" + "="*60)
-        if self.skip_mesh_generation:
+        if self.fast_2d_only:
+            print("FAST 2D ONLY VIDEO PROCESSING")
+        elif self.skip_mesh_generation:
             print("VIDEO TO 2D KEYPOINT EXTRACTION (MESH GENERATION SKIPPED)")
         else:
             print("VIDEO TO 3D MESH PROCESSING")
@@ -173,7 +183,9 @@ class VideoProcessor:
         print(f"Max frames: {self.max_frames}")
         print(f"Output: {self.output_dir}")
         print(f"Quality filter: {'ENABLED' if self.enable_quality_filter else 'disabled'}")
-        if self.skip_mesh_generation:
+        if self.fast_2d_only:
+            print("Mode: SAM3 + ViTPose with temporal smoothing (no SAMBdy, no bundle adjustment)")
+        elif self.skip_mesh_generation:
             print(f"Mode: 2D keypoints only (no 3D meshes)")
         elif self.skip_mesh_saving:
             print(f"Mode: Generate meshes but don't save PLY files")
@@ -213,26 +225,34 @@ class VideoProcessor:
         os.makedirs(meshes_dir, exist_ok=True)
 
         # Process in chunks
-        chunk_size = 50
+        chunk_size = self.chunk_size
         num_chunks = (self.max_frames + chunk_size - 1) // chunk_size
+        prev_mask = None  # last-frame mask carried forward between chunks
 
         for chunk_idx in range(num_chunks):
-            start_idx = chunk_idx * chunk_size
-            chunk_frames = min(chunk_size, self.max_frames - start_idx)
+            start_idx = self.start_frame + chunk_idx * chunk_size
+            chunk_frames = min(chunk_size, self.max_frames - chunk_idx * chunk_size)
 
             print(f"\n{'='*60}")
             print(f"CHUNK {chunk_idx + 1}/{num_chunks}: Frames {start_idx}-{start_idx + chunk_frames - 1}")
             print(f"{'='*60}")
 
+            chunk_last_mask = None  # will be updated as we process this chunk
+
             # Segment with SAM3
             for frame_idx, outputs, frame in self.segmenter.segment_video_chunks(
-                self.video_path, self.text_prompt, chunk_frames, start_idx
+                self.video_path, self.text_prompt, chunk_frames, start_idx,
+                prev_mask=prev_mask
             ):
                 frame_bgr = cv2.cvtColor(frame, cv2.COLOR_RGB2BGR)
 
                 # Save frame temporarily
                 temp_frame_path = os.path.join(masks_dir, f"temp_frame_{frame_idx:04d}.jpg")
                 cv2.imwrite(temp_frame_path, frame_bgr)
+
+                # Track last mask for handoff to next chunk
+                if len(outputs['masks']) > 0:
+                    chunk_last_mask = outputs['masks'][0].cpu()
 
                 # Process each detected object
                 for i, (mask, obj_id, score) in enumerate(zip(
@@ -339,6 +359,9 @@ class VideoProcessor:
                 if os.path.exists(temp_frame_path):
                     os.remove(temp_frame_path)
 
+            # Carry last mask forward for next chunk's frame-0 seed
+            prev_mask = chunk_last_mask
+
             # Clean up chunk
             gc.collect()
             torch.cuda.empty_cache()
@@ -392,6 +415,10 @@ class VideoProcessor:
 
         # Save aggregate results
         self._save_results(all_mesh_results, quality_log)
+
+        smoothed_2d_results = None
+        if self.temporal_smooth_keypoints:
+            smoothed_2d_results = self._smooth_and_export_2d_keypoints(all_mesh_results)
 
         # Apply bundle adjustment and export COCO CSV if requested
         csv_results = None
@@ -466,7 +493,8 @@ class VideoProcessor:
             'quality_log': quality_log,
             'segments': self.quality_analyzer.identify_segments(quality_log),
             'keypoints': self._aggregate_keypoints(all_mesh_results),
-            'csv_results': csv_results
+            'csv_results': csv_results,
+            'smoothed_2d_results': smoothed_2d_results
         }
 
     def _aggregate_keypoints(self, all_mesh_results):
@@ -534,6 +562,214 @@ class VideoProcessor:
         with open(video_info_path, 'w') as f:
             json.dump(self.video_info, f, indent=2)
         print(f"✓ Saved video info to: {video_info_path}")
+
+    def _smooth_and_export_2d_keypoints(self, all_mesh_results):
+        """Smooth 2D keypoints over time and export JSON/CSV outputs."""
+        all_keypoints = self._aggregate_keypoints(all_mesh_results)
+        frames = all_keypoints.get('frames', [])
+        if not frames:
+            print("⚠ No 2D keypoints available for smoothing")
+            return None
+
+        by_object = {}
+        for frame_data in frames:
+            keypoints_2d = frame_data.get('keypoints_2d')
+            if not keypoints_2d or 'keypoints' not in keypoints_2d:
+                continue
+            by_object.setdefault(frame_data['object_id'], []).append(frame_data)
+
+        if not by_object:
+            print("⚠ No valid 2D keypoint detections available for smoothing")
+            return None
+
+        print("\n" + "="*60)
+        print("FAST 2D TEMPORAL SMOOTHING")
+        print("="*60)
+        print(f"Window length: {self.temporal_smooth_window} frames")
+        print(f"Polynomial order: {self.temporal_smooth_polyorder}")
+
+        smoothed_count = 0
+        for object_id, object_frames in by_object.items():
+            object_frames.sort(key=lambda x: x['frame_idx'])
+            parsed_frames = []
+            for frame_data in object_frames:
+                flat = frame_data.get('keypoints_2d', {}).get('keypoints')
+                if not flat:
+                    continue
+                if len(flat) % 3 != 0:
+                    print(
+                        f"⚠ Object {object_id}, frame {frame_data['frame_idx']}: "
+                        f"invalid keypoint length {len(flat)} (not divisible by 3), skipping"
+                    )
+                    continue
+                kp_count = len(flat) // 3
+                parsed_frames.append((frame_data, kp_count, np.array(flat, dtype=float).reshape(kp_count, 3)))
+
+            if len(parsed_frames) < self.temporal_smooth_window:
+                print(f"⚠ Object {object_id}: only {len(parsed_frames)} valid frames, skipping smoothing")
+                continue
+
+            # Smooth only the dominant keypoint layout for this object to avoid shape mismatches.
+            kp_counter = Counter(kp_count for _, kp_count, _ in parsed_frames)
+            target_kp_count = kp_counter.most_common(1)[0][0]
+            matched = [(frame_data, arr) for frame_data, kp_count, arr in parsed_frames if kp_count == target_kp_count]
+
+            if len(matched) < self.temporal_smooth_window:
+                print(
+                    f"⚠ Object {object_id}: dominant keypoint count ({target_kp_count}) has "
+                    f"only {len(matched)} frames, skipping smoothing"
+                )
+                continue
+
+            keypoints_array = np.array([arr for _, arr in matched])
+            smoothed_xy = keypoints_array[:, :, :2].copy()
+
+            for kp_idx in range(target_kp_count):
+                for coord_idx in range(2):
+                    smoothed_xy[:, kp_idx, coord_idx] = savgol_filter(
+                        smoothed_xy[:, kp_idx, coord_idx],
+                        window_length=self.temporal_smooth_window,
+                        polyorder=self.temporal_smooth_polyorder,
+                        mode='nearest'
+                    )
+
+            for i, (frame_data, _) in enumerate(matched):
+                smoothed = keypoints_array[i].copy()
+                smoothed[:, :2] = smoothed_xy[i]
+                frame_data['keypoints_2d_smoothed'] = {
+                    'keypoints': smoothed.reshape(-1).tolist(),
+                    'num_keypoints': frame_data['keypoints_2d'].get('num_keypoints', 0)
+                }
+                smoothed_count += 1
+
+            print(f"✓ Object {object_id}: smoothed {len(matched)} frames ({target_kp_count} keypoints)")
+
+        # Persist per-frame files with smoothed keypoints when available
+        for frame_data in frames:
+            frame_idx = frame_data['frame_idx']
+            object_id = frame_data['object_id']
+            keypoints_path = os.path.join(
+                self.output_dir,
+                f"{self.video_name}_meshes",
+                f"frame_{frame_idx:04d}_obj_{object_id}",
+                "keypoints.json"
+            )
+            if os.path.exists(keypoints_path):
+                with open(keypoints_path, 'w') as f:
+                    json.dump(frame_data, f, indent=2)
+
+        smoothed_json_path = os.path.join(self.output_dir, f"{self.video_name}_all_keypoints_2d_smoothed.json")
+        with open(smoothed_json_path, 'w') as f:
+            json.dump(all_keypoints, f, indent=2)
+
+        smoothed_csv_path = os.path.join(self.output_dir, f"{self.video_name}_2D_smoothed.csv")
+        with open(smoothed_csv_path, 'w', newline='') as f:
+            writer = csv.writer(f)
+
+            max_kp_count = 0
+            for frame_data in frames:
+                payload = frame_data.get('keypoints_2d_smoothed') or frame_data.get('keypoints_2d')
+                if payload and 'keypoints' in payload:
+                    max_kp_count = max(max_kp_count, len(payload['keypoints']) // 3)
+
+            header = ['frame', 'object_id']
+            for kp_idx in range(max_kp_count):
+                header.extend([f'kp{kp_idx}_x', f'kp{kp_idx}_y', f'kp{kp_idx}_v'])
+            writer.writerow(header)
+
+            for frame_data in sorted(frames, key=lambda x: (x['frame_idx'], x.get('object_id', 0))):
+                payload = frame_data.get('keypoints_2d_smoothed') or frame_data.get('keypoints_2d')
+                if not payload or 'keypoints' not in payload:
+                    continue
+                row_keypoints = payload['keypoints']
+                expected_len = max_kp_count * 3
+                if len(row_keypoints) < expected_len:
+                    row_keypoints = row_keypoints + [float('nan')] * (expected_len - len(row_keypoints))
+                writer.writerow([frame_data['frame_idx'], frame_data.get('object_id', 0), *row_keypoints])
+
+        print(f"✓ Saved smoothed 2D keypoints JSON: {smoothed_json_path}")
+        print(f"✓ Saved smoothed 2D keypoints CSV: {smoothed_csv_path}")
+
+        video_path = self._save_2d_overlay_video(frames)
+        print("="*60 + "\n")
+
+        return {
+            'json': smoothed_json_path,
+            'csv': smoothed_csv_path,
+            'video': video_path,
+            'num_frames': smoothed_count
+        }
+
+    # COCO skeleton connections: (kp_idx_a, kp_idx_b, BGR_color)
+    _SKELETON = [
+        (0, 1, (255, 200, 100)), (0, 2, (255, 200, 100)),   # nose-eyes
+        (1, 3, (255, 200, 100)), (2, 4, (255, 200, 100)),   # eyes-ears
+        (5, 6, (0, 255, 255)),                               # shoulders
+        (5, 7, (0, 255, 0)),   (7, 9, (0, 200, 100)),       # left arm
+        (6, 8, (0, 255, 0)),   (8, 10, (0, 200, 100)),      # right arm
+        (5, 11, (0, 255, 255)), (6, 12, (0, 255, 255)),     # torso sides
+        (11, 12, (0, 255, 255)),                             # hips
+        (11, 13, (255, 0, 255)), (13, 15, (200, 100, 255)), # left leg
+        (12, 14, (255, 0, 255)), (14, 16, (200, 100, 255)), # right leg
+    ]
+
+    def _save_2d_overlay_video(self, frames):
+        """Render 2D keypoint skeleton overlay onto the original video."""
+        # Build frame_idx -> keypoints lookup from smoothed (or raw) 2D data
+        kp_by_frame = {}
+        for fd in frames:
+            payload = fd.get('keypoints_2d_smoothed') or fd.get('keypoints_2d')
+            if not payload or 'keypoints' not in payload:
+                continue
+            flat = payload['keypoints']
+            if len(flat) % 3 != 0:
+                continue
+            n = len(flat) // 3
+            kp_by_frame[fd['frame_idx']] = np.array(flat, dtype=float).reshape(n, 3)
+
+        if not kp_by_frame:
+            print("⚠ No keypoints for video overlay")
+            return None
+
+        cap = cv2.VideoCapture(self.video_path)
+        fps = cap.get(cv2.CAP_PROP_FPS) or 30.0
+        w = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+        h = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+
+        video_out_path = os.path.join(self.output_dir, f"{self.video_name}_2D_skeleton.mp4")
+        fourcc = cv2.VideoWriter_fourcc(*'mp4v')
+        writer = cv2.VideoWriter(video_out_path, fourcc, fps, (w, h))
+
+        min_frame = min(kp_by_frame)
+        max_frame = max(kp_by_frame)
+        cap.set(cv2.CAP_PROP_POS_FRAMES, min_frame)
+
+        print(f"Rendering 2D overlay video (frames {min_frame}–{max_frame})...")
+        for frame_idx in range(min_frame, max_frame + 1):
+            ret, frame = cap.read()
+            if not ret:
+                break
+            if frame_idx in kp_by_frame:
+                kps = kp_by_frame[frame_idx]  # (N, 3): x, y, visibility
+                n = len(kps)
+                for a, b, color in self._SKELETON:
+                    if a >= n or b >= n:
+                        continue
+                    if kps[a, 2] < 0.1 or kps[b, 2] < 0.1:
+                        continue
+                    pt1 = (int(kps[a, 0]), int(kps[a, 1]))
+                    pt2 = (int(kps[b, 0]), int(kps[b, 1]))
+                    cv2.line(frame, pt1, pt2, color, 3, cv2.LINE_AA)
+                for i in range(n):
+                    if kps[i, 2] < 0.1:
+                        continue
+                    cv2.circle(frame, (int(kps[i, 0]), int(kps[i, 1])), 5, (255, 255, 255), -1)
+            writer.write(frame)
+
+        cap.release()
+        writer.release()
+        print(f"✓ Saved 2D overlay video: {video_out_path}")
+        return video_out_path
 
     def smooth_and_export(self, processing_data):
         """Apply temporal smoothing and export smoothed meshes."""
@@ -615,6 +851,8 @@ def main():
                        help="Object to segment (default: 'baby')")
     parser.add_argument("--max-frames", type=int, default=300,
                        help="Max frames to process (default: 300, -1 for all)")
+    parser.add_argument("--start-frame", type=int, default=0,
+                       help="Video frame index to start processing from (default: 0)")
     parser.add_argument("--output-dir", type=str, default="output",
                        help="Output directory (default: 'output')")
     parser.add_argument("--smoothing-sigma", type=float, default=2.0,
@@ -625,6 +863,8 @@ def main():
                        help="Log detailed quality metrics for all frames")
     parser.add_argument("--skip-mesh-generation", action="store_true",
                        help="Skip 3D mesh generation (extract 2D keypoints only)")
+    parser.add_argument("--fast-2d-only", action="store_true",
+                       help="Fast mode: SAM3 + ViTPose with temporal smoothing only (no SAMBdy, no bundle adjustment)")
     parser.add_argument("--skip-mesh-saving", action="store_true",
                        help="Generate meshes for MHR params but don't save PLY files")
     parser.add_argument("--export-coco-csv", action="store_true",
@@ -652,6 +892,13 @@ def main():
     parser.add_argument("--tracking-params", type=str, default=None,
                        help='SAM3 tracking parameter overrides as JSON string, '
                             'e.g. \'{"max_num_objects": 1, "new_det_thresh": 0.9}\'')
+    parser.add_argument("--max-detections", type=int, default=None,
+                       help='Maximum number of objects to track (default: SAM3 model default of 10000). '
+                            'Set to 1 for single-subject videos to prevent locking onto background objects.')
+    parser.add_argument("--chunk-size", type=int, default=50,
+                       help='Frames per SAM3 tracking chunk. Larger values reduce track-switch '
+                            'artifacts at chunk boundaries but use more GPU memory. '
+                            'Set to max-frames to process in one shot (default: 50)')
 
     args = parser.parse_args()
 
@@ -739,6 +986,7 @@ def main():
     # Processing parameters
     max_frames = get_param(args.max_frames, 'max_frames', ['processing.max_frames'], 300)
     skip_mesh_generation = get_param(args.skip_mesh_generation, 'skip_mesh_generation', ['processing.skip_mesh_generation'], False)
+    fast_2d_only = get_param(args.fast_2d_only, 'fast_2d_only', ['processing.fast_2d_only'], False)
     skip_mesh_saving = get_param(args.skip_mesh_saving, 'skip_mesh_saving', ['processing.skip_mesh_saving'], False)
     export_coco_csv = get_param(args.export_coco_csv, 'export_coco_csv', ['processing.export_coco_csv'], False)
     smoothing_sigma = get_param(args.smoothing_sigma, 'smoothing_sigma', ['processing.smoothing_sigma'], 2.0)
@@ -756,6 +1004,13 @@ def main():
         temporal_smooth_keypoints = not args.no_temporal_smooth_keypoints
     else:
         temporal_smooth_keypoints = config.get('processing', {}).get('temporal_smooth_keypoints', True)
+
+    # Fast 2D mode force-enables smoothing and disables mesh/BA paths
+    if fast_2d_only:
+        skip_mesh_generation = True
+        export_coco_csv = False
+        bundle_adjustment = False
+        temporal_smooth_keypoints = True
 
     # Quality parameters
     enable_quality_filter = get_param(args.enable_quality_filter, 'enable_quality_filter', ['quality.enable_filter'], False)
@@ -782,6 +1037,8 @@ def main():
     if args.tracking_params:
         import json as json_mod
         tracking_params.update(json_mod.loads(args.tracking_params))
+    if args.max_detections is not None:
+        tracking_params['max_num_objects'] = args.max_detections
 
     # Get list of videos to process
     video_files = []
@@ -814,6 +1071,7 @@ def main():
         'processing': {
             'max_frames': max_frames,
             'skip_mesh_generation': skip_mesh_generation,
+            'fast_2d_only': fast_2d_only,
             'skip_mesh_saving': skip_mesh_saving,
             'export_coco_csv': export_coco_csv,
             'bundle_adjustment': bundle_adjustment,
@@ -874,18 +1132,27 @@ def main():
                 quality_z_velocity_threshold=quality_z_velocity,
                 quality_total_velocity_threshold=quality_total_velocity,
                 quality_vertex_displacement_threshold=quality_vertex_displacement,
+                fast_2d_only=fast_2d_only,
                 enable_metrics=enable_metrics,
                 enable_plots=enable_plots,
-                tracking_params=tracking_params
+                tracking_params=tracking_params,
+                chunk_size=args.chunk_size,
+                start_frame=args.start_frame
             )
 
             # Step 1: Process video
             print("\n" + "="*60)
-            print("STEP 1: MASK GENERATION & 3D MESH ESTIMATION")
+            if fast_2d_only:
+                print("STEP 1: MASK GENERATION & FAST 2D KEYPOINT EXTRACTION")
+            else:
+                print("STEP 1: MASK GENERATION & 3D MESH ESTIMATION")
             print("="*60)
 
             processing_data = processor.process_video()
-            print(f"\n✓ Generated {len(processing_data['results'])} 3D meshes")
+            if fast_2d_only:
+                print(f"\n✓ Processed {len(processing_data['results'])} detections in fast 2D mode")
+            else:
+                print(f"\n✓ Generated {len(processing_data['results'])} 3D meshes")
 
             # Log results
             exp_logger.log_result(f'{video_path.stem}_num_frames', len(processing_data['results']))
@@ -895,12 +1162,24 @@ def main():
 
             # Step 2: Smooth and export
             print("\n" + "="*60)
-            print("STEP 2: TEMPORAL SMOOTHING & MESH EXPORT")
+            if fast_2d_only:
+                print("STEP 2: FAST 2D EXPORT")
+            else:
+                print("STEP 2: TEMPORAL SMOOTHING & MESH EXPORT")
             print("="*60)
 
-            exports = processor.smooth_and_export(processing_data)
+            exports = None if fast_2d_only else processor.smooth_and_export(processing_data)
 
-            if exports:
+            if fast_2d_only:
+                smoothed_2d = processing_data.get('smoothed_2d_results')
+                if smoothed_2d:
+                    print("\n✓ VIDEO PROCESSING COMPLETE!")
+                    print(f"Smoothed 2D CSV: {smoothed_2d['csv']}")
+                    print(f"Smoothed 2D JSON: {smoothed_2d['json']}")
+                    exp_logger.log_result(f'{video_path.stem}_status', 'completed')
+                else:
+                    exp_logger.log_result(f'{video_path.stem}_status', 'no_export')
+            elif exports:
                 print("\n✓ VIDEO PROCESSING COMPLETE!")
                 print(f"Smoothed meshes: {len(exports['meshes'])} PLY files")
                 print(f"Metadata: {exports['metadata']}")

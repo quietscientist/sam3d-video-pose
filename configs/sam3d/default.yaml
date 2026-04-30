@@ -5,7 +5,7 @@
 experiment_name: null
 
 # Input: single video file or folder of videos
-input:  "/workspaces/sam-3d-infant/data/videos/robot/sim_trunk_clothed_cam2_vid5.MP4"
+input:  "/home/msegado/tapedeck/msegado/PANDA/videos/YT"
 
 # Text prompt for segmentation
 text_prompt: "a baby"
@@ -17,7 +17,7 @@ output_dir: "output"
 processing:
   max_frames: -1                      # -1 for all frames
   skip_mesh_generation: false          # Skip 3D mesh generation (2D keypoints only)
-  skip_mesh_saving: false              # Generate meshes but don't save PLY files
+  skip_mesh_saving: true              # Generate meshes but don't save PLY files
   export_coco_csv: true                # Export COCO 17-point CSV files
   bundle_adjustment: true              # Apply bundle adjustment to fix bone lengths
   constrain_torso: false               # Include torso in constraints (not recommended for infants)

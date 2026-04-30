@@ -138,6 +138,8 @@ def load_keypoints_from_csv(csv_path, flip_z=False):
             frames.append({'frame_idx': int(frame_idx), 'keypoints_3d': kp})
     else:
         # Wide format: one row per frame, columns like nose_x, nose_y, nose_z
+        # Accept both 'frame' and 'frame_number' column names (rekinect compatibility)
+        frame_col = 'frame' if 'frame' in df.columns else 'frame_number'
         for _, row in df.iterrows():
             kp = np.zeros((17, 3))
             for i in range(17):
@@ -146,7 +148,7 @@ def load_keypoints_from_csv(csv_path, flip_z=False):
                 kp[i, 2] = row[f'{COCO_KEYPOINT_NAMES[i]}_z']
             if flip_z:
                 kp[:, 2] *= -1
-            frames.append({'frame_idx': int(row['frame']), 'keypoints_3d': kp})
+            frames.append({'frame_idx': int(row[frame_col]), 'keypoints_3d': kp})
 
     print(f"Loaded {len(frames)} frames from {csv_path}")
     return frames

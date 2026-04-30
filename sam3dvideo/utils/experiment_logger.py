@@ -148,8 +148,11 @@ class ExperimentLogger:
         """
         # Load existing runs
         if self.runs_log_path.exists():
-            with open(self.runs_log_path, 'r') as f:
-                runs_log = json.load(f)
+            try:
+                with open(self.runs_log_path, 'r') as f:
+                    runs_log = json.load(f)
+            except json.JSONDecodeError:
+                runs_log = {'runs': []}
         else:
             runs_log = {'runs': []}
 

@@ -86,6 +86,7 @@ class ConfigLoader:
             'processing': {
                 'max_frames': 300,
                 'skip_mesh_generation': False,
+                'fast_2d_only': False,
                 'skip_mesh_saving': False,
                 'export_coco_csv': False,
                 'bundle_adjustment': True,
