@@ -72,10 +72,7 @@ class SAM3Segmenter:
         self._load_models()
 
     def _target_lock_default(self):
-        raw_value = self.tracking_params.get(
-            'target_lock',
-            self.tracking_params.get('max_num_objects') == 1,
-        )
+        raw_value = self.tracking_params.get('target_lock', True)
         if isinstance(raw_value, str):
             return raw_value.lower() in {'1', 'true', 'yes', 'on'}
         return bool(raw_value)
