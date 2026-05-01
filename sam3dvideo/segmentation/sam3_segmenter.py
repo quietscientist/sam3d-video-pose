@@ -11,6 +11,7 @@ import numpy as np
 from transformers import Sam3VideoModel, Sam3VideoProcessor
 from accelerate import Accelerator
 
+from .appearance_embedder import AppearanceEmbedder
 from .target_selector import TargetLockDecision, TargetSelector
 
 
@@ -46,6 +47,14 @@ class SAM3Segmenter:
         self.target_candidate_count = int(
             self.tracking_params.get('target_lock_candidate_count', 5)
         )
+        appearance_model_id = self.tracking_params.get('appearance_model_id', 'facebook/dinov2-small')
+        embedder = None
+        if self.target_lock_enabled:
+            try:
+                embedder = AppearanceEmbedder(model_id=appearance_model_id, device=str(device or 'cuda'))
+            except Exception as e:
+                print(f"  ⚠ Could not load appearance embedder: {e} — reacquire will use area proximity")
+
         self.target_selector = TargetSelector(
             enabled=self.target_lock_enabled,
             output_object_id=int(self.tracking_params.get('target_output_object_id', 0)),
@@ -55,6 +64,7 @@ class SAM3Segmenter:
             max_area_ratio=float(self.tracking_params.get('target_max_area_ratio', 4.0)),
             reacquire_after=int(self.tracking_params.get('target_reacquire_after', 12)),
             center_prior_weight=float(self.tracking_params.get('target_center_prior_weight', 0.25)),
+            embedder=embedder,
         )
         self.sam_model = None
         self.sam_processor = None
@@ -228,7 +238,9 @@ class SAM3Segmenter:
             ):
                 processed = self.sam_processor.postprocess_outputs(session, model_outputs)
                 abs_frame_idx = start_idx + model_outputs.frame_idx
-                processed, decision = self.target_selector.select(processed, abs_frame_idx)
+                local_idx = model_outputs.frame_idx
+                frame_rgb = chunk_frames[local_idx] if local_idx < len(chunk_frames) else None
+                processed, decision = self.target_selector.select(processed, abs_frame_idx, frame=frame_rgb)
                 self._log_target_decision(decision)
                 result[abs_frame_idx] = processed
             return result

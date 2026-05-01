@@ -5,9 +5,13 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 import math
-from typing import Any
+from typing import TYPE_CHECKING, Any
 
+import numpy as np
 import torch
+
+if TYPE_CHECKING:
+    from .appearance_embedder import AppearanceEmbedder
 
 
 @dataclass
@@ -54,6 +58,7 @@ class TargetSelector:
         max_area_ratio: float = 4.0,
         reacquire_after: int = 12,
         center_prior_weight: float = 0.25,
+        embedder: AppearanceEmbedder | None = None,
     ):
         self.enabled = enabled
         self.output_object_id = output_object_id
@@ -63,6 +68,7 @@ class TargetSelector:
         self.max_area_ratio = max_area_ratio
         self.reacquire_after = reacquire_after
         self.center_prior_weight = center_prior_weight
+        self.embedder = embedder
 
         self.last_mask: torch.Tensor | None = None
         self.last_center: tuple[float, float] | None = None
@@ -71,8 +77,11 @@ class TargetSelector:
         self.last_frame_idx: int | None = None
         self.last_source_object_id: int | None = None
         self.missed_frames = 0
+        self.reference_embedding: torch.Tensor | None = None
 
-    def select(self, outputs: dict[str, Any], frame_idx: int) -> tuple[dict[str, Any], TargetLockDecision]:
+    def select(
+        self, outputs: dict[str, Any], frame_idx: int, frame: np.ndarray | None = None
+    ) -> tuple[dict[str, Any], TargetLockDecision]:
         """Filter SAM3 outputs down to a single continuity-checked target."""
         if not self.enabled:
             return outputs, TargetLockDecision(True, frame_idx, "disabled")
@@ -91,6 +100,12 @@ class TargetSelector:
         if self.last_mask is None or self.last_center is None or self.last_area is None:
             selected = self._select_initial(candidates)
             self._update_state(selected, frame_idx)
+            # Store reference embedding on first lock so reacquire can use re-ID.
+            if frame is not None and self.embedder is not None and self.reference_embedding is None:
+                emb = self.embedder.embed_crop(frame, selected.box)
+                if emb is not None:
+                    self.reference_embedding = emb
+                    print(f"  Target lock frame {frame_idx}: stored reference appearance embedding")
             return self._filter_outputs(outputs, selected), TargetLockDecision(
                 True,
                 frame_idx,
@@ -100,7 +115,7 @@ class TargetSelector:
                 should_log=True,
             )
 
-        selected = self._select_by_continuity(candidates, frame_idx)
+        selected = self._select_by_continuity(candidates, frame_idx, frame=frame)
         if selected is None:
             self.missed_frames += 1
             best = max(candidates, key=lambda c: c.target_score)
@@ -172,16 +187,45 @@ class TargetSelector:
             key=lambda c: c.score + self.center_prior_weight * self._center_prior_score(c),
         )
 
-    def _select_by_continuity(self, candidates: list[_Candidate], frame_idx: int) -> _Candidate | None:
-        # After extended misses, stale velocity/area state is unreliable.
-        # Fall back to initial selection (text-prompt score + center bias) so
-        # we re-lock using SAM3's detection confidence rather than a stale
-        # position extrapolation that may point to the wrong person.
+    def _select_by_reacquire(
+        self, candidates: list[_Candidate], frame: np.ndarray | None
+    ) -> _Candidate:
+        """Select best candidate after extended miss using re-ID → area → text score."""
+        # 1. Appearance re-ID: embed each candidate crop, pick closest to reference.
+        if frame is not None and self.embedder is not None and self.reference_embedding is not None:
+            best_sim = -1.0
+            best = None
+            for candidate in candidates:
+                emb = self.embedder.embed_crop(frame, candidate.box)
+                if emb is not None:
+                    sim = self.embedder.similarity(emb, self.reference_embedding)
+                    if sim > best_sim:
+                        best_sim = sim
+                        best = candidate
+            if best is not None:
+                print(f"    Reacquire via appearance re-ID (similarity={best_sim:.3f})")
+                return best
+
+        # 2. Area proximity: prefer candidate closest in size to historical target.
+        if self.last_area and self.last_area > 0:
+            return min(candidates, key=lambda c: abs(math.log(max(c.area, 1) / self.last_area)))
+
+        # 3. Fallback: text-score + center bias.
+        return self._select_initial(candidates)
+
+    def _select_by_continuity(
+        self,
+        candidates: list[_Candidate],
+        frame_idx: int,
+        frame: np.ndarray | None = None,
+    ) -> _Candidate | None:
+        # After extended misses, position/mask are too stale to guide selection.
+        # Use appearance re-ID if available (most reliable), then fall back to
+        # area proximity (child vs adult body size), then text-score + center.
         if self.missed_frames >= self.reacquire_after:
-            selected = self._select_initial(candidates)
-            # Reset continuity state so the next frame tracks from a clean slate.
+            selected = self._select_by_reacquire(candidates, frame)
+            # Reset position/mask state — keep last_area for future reacquires.
             self.last_mask = None
-            self.last_area = None
             self.last_center = None
             return selected
 
