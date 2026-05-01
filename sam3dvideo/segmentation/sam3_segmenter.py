@@ -65,6 +65,7 @@ class SAM3Segmenter:
             reacquire_after=int(self.tracking_params.get('target_reacquire_after', 12)),
             center_prior_weight=float(self.tracking_params.get('target_center_prior_weight', 0.25)),
             embedder=embedder,
+            similarity_threshold=float(self.tracking_params.get('target_similarity_threshold', 0.5)),
         )
         self.sam_model = None
         self.sam_processor = None

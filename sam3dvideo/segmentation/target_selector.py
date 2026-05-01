@@ -59,6 +59,7 @@ class TargetSelector:
         reacquire_after: int = 12,
         center_prior_weight: float = 0.25,
         embedder: AppearanceEmbedder | None = None,
+        similarity_threshold: float = 0.5,
     ):
         self.enabled = enabled
         self.output_object_id = output_object_id
@@ -69,6 +70,7 @@ class TargetSelector:
         self.reacquire_after = reacquire_after
         self.center_prior_weight = center_prior_weight
         self.embedder = embedder
+        self.similarity_threshold = similarity_threshold
 
         self.last_mask: torch.Tensor | None = None
         self.last_center: tuple[float, float] | None = None
@@ -189,8 +191,12 @@ class TargetSelector:
 
     def _select_by_reacquire(
         self, candidates: list[_Candidate], frame: np.ndarray | None
-    ) -> _Candidate:
-        """Select best candidate after extended miss using re-ID → area → text score."""
+    ) -> _Candidate | None:
+        """Select best candidate after extended miss using re-ID → area → text score.
+
+        Returns None if the best appearance match is below similarity_threshold,
+        meaning the target is likely absent rather than switched to another person.
+        """
         # 1. Appearance re-ID: embed each candidate crop, pick closest to reference.
         if frame is not None and self.embedder is not None and self.reference_embedding is not None:
             best_sim = -1.0
@@ -203,8 +209,12 @@ class TargetSelector:
                         best_sim = sim
                         best = candidate
             if best is not None:
-                print(f"    Reacquire via appearance re-ID (similarity={best_sim:.3f})")
-                return best
+                if best_sim >= self.similarity_threshold:
+                    print(f"    Reacquire via appearance re-ID (similarity={best_sim:.3f})")
+                    return best
+                else:
+                    print(f"    Reacquire: best similarity {best_sim:.3f} < threshold {self.similarity_threshold} — target absent, skipping")
+                    return None
 
         # 2. Area proximity: prefer candidate closest in size to historical target.
         if self.last_area and self.last_area > 0:
