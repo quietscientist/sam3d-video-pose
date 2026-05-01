@@ -173,10 +173,21 @@ class TargetSelector:
         )
 
     def _select_by_continuity(self, candidates: list[_Candidate], frame_idx: int) -> _Candidate | None:
+        # After extended misses, stale velocity/area state is unreliable.
+        # Fall back to initial selection (text-prompt score + center bias) so
+        # we re-lock using SAM3's detection confidence rather than a stale
+        # position extrapolation that may point to the wrong person.
+        if self.missed_frames >= self.reacquire_after:
+            selected = self._select_initial(candidates)
+            # Reset continuity state so the next frame tracks from a clean slate.
+            self.last_mask = None
+            self.last_area = None
+            self.last_center = None
+            return selected
+
         expected_center = self._expected_center(frame_idx)
         last_area = max(self.last_area or 1.0, 1.0)
         diag = self._mask_diag(candidates[0].mask)
-        allow_reacquire = self.missed_frames >= self.reacquire_after
 
         for candidate in candidates:
             candidate.iou = self._mask_iou(candidate.mask, self.last_mask)
@@ -191,11 +202,10 @@ class TargetSelector:
                 + 0.5 * candidate.score
                 - 0.75 * area_penalty
             )
-            area_ok = candidate.area_ratio <= self.max_area_ratio or allow_reacquire
+            area_ok = candidate.area_ratio <= self.max_area_ratio
             candidate.accepted = area_ok and (
                 candidate.iou >= self.min_iou
                 or candidate.center_dist_norm <= self.max_center_jump
-                or allow_reacquire
             )
 
         accepted = [candidate for candidate in candidates if candidate.accepted]
